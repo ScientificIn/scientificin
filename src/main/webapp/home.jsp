@@ -1,10 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Sci.In | Perfil</title>
-</head>
-<body>
+<%@ include file="header.jsp" %> 
 <div class="integracoes">
 	<a href="#">Meu Lattes</a>
 	<a href="#">Facebook</a>
@@ -26,6 +20,4 @@
 	<button class="main-button">Meus trabalhos</button>
 	<button class="main-button">Busca de usuários</button>
 </div>
-
-</body>
-</html>
+<%@ include file="footer.jsp" %>
