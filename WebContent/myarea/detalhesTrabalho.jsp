@@ -9,6 +9,14 @@
 	<div>
 		<h2 class="titulo-projeto">Nome do Projeto</h2>
 		
+		<nav>
+			<a href="#">Autor</a>
+			<a href="#">Título</a>
+			<a href="#">Tags</a>
+			<a href="#">Links</a>
+			<a href="#">Recursos</a>
+		</nav>
+		
 		<div class="texto-projeto">
 			Minha vó de muletas costumava ser uma pessoa boa
 			que gostava de comer doces e particularmente chiclete.
