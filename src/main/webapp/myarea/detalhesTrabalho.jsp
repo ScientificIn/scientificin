@@ -1,11 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>[Nome do Trabalho]</title>
-</head>
-
-<body>
+<%@ include file="/header.jsp" %>
 	<div>
 		<h2 class="titulo-projeto">Nome do Projeto</h2>
 		
@@ -71,4 +64,4 @@
 			</div>
 		</div>
 	</div>
-</body>
+<%@ include file="/footer.jsp" %>

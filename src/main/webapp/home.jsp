@@ -1,4 +1,4 @@
-<%@ include file="header.jsp" %> 
+<%@ include file="/header.jsp" %> 
 <div class="integracoes">
 	<a href="#">Meu Lattes</a>
 	<a href="#">Facebook</a>
@@ -20,4 +20,4 @@
 	<button class="main-button">Meus trabalhos</button>
 	<button class="main-button">Busca de usuários</button>
 </div>
-<%@ include file="footer.jsp" %>
+<%@ include file="/footer.jsp" %>

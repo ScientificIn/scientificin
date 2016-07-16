@@ -1,10 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>SciIn | Cadastro</title>
-</head>
-<body>
+<%@ include file="/header.jsp" %>
 
 <form method="post" action="/cadastroCompleto">
 	<label>Seu nome: </label><input type="text" name="name"/>
@@ -12,5 +6,4 @@
 	
 </form>
 
-</body>
-</html>
+<%@ include file="/footer.jsp" %>

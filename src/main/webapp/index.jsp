@@ -1,10 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>ScientificIn</title>
-</head>
-<body>
+<%@ include file="/header.jsp" %>
 <form method="post" action="../login">
 	<fieldset>
 		<legend>Faça seu login:</legend>
@@ -29,5 +23,5 @@
 		<input type="submit" value="Cadastrar!"/>
 	</fieldset>
 </form>
-</body>
-</html>
+
+<%@ include file="/footer.jsp" %>
