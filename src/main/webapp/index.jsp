@@ -6,10 +6,18 @@
 <button type="button" class="btn btn-info btn-lg" data-toggle="modal"
 	data-target="#registerModal">Registre-se</button>
 
-<div class="container-fluid">
-	<video width="320" height="240" autoplay="autoplay" loop="loop">
-		<source src="/static/video/blind-remi.mp4" type="video/mp4">
-	</video>
+<div class="container col-sm-6 pull-right">
+	<div class="index-video-container col-sm-12">
+		<video class="index-video" controls="controls" autoplay="autoplay"
+			loop="loop">
+			<source src="/static/video/blind-remi.mp4" type="video/mp4">
+		</video>
+
+	</div>
+	
+	<a class="logo" href="/about">
+		<img src="/static/img/logo.png" />
+	</a>
 </div>
 
 <!-- Modal do Login -->

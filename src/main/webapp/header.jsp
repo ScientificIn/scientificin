@@ -8,6 +8,7 @@
 	
 	<link rel="stylesheet" href="/static/css/bootstrap.min.css"/>
 	<link rel="stylesheet" href="/static/css/bootstrap-theme.min.css"/>
+	<link rel="stylesheet" href="/static/css/jqcloud.min.css"/>
 	<link rel="stylesheet" href="/static/css/style.css"/>
 </head>
 <body>
