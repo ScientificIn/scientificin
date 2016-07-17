@@ -2,5 +2,6 @@
 	<script type="text/javascript" src="/static/js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="/static/js/jqcloud.min.js"></script>
 	<script type="text/javascript" src="/static/js/scientificin.js"></script>
+	<script type="text/javascript" src="/static/js/indexController.js"></script>
 </body>
 </html>

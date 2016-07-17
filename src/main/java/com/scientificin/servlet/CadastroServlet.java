@@ -8,6 +8,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.scientificin.entity.User;
+
 @WebServlet("/cadastro")
 public class CadastroServlet extends HttpServlet {
 
@@ -15,8 +17,13 @@ public class CadastroServlet extends HttpServlet {
 
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		resp.getWriter().write("<html><head><title>Login</title></head><body><h2>Sucesso!</h2></body></html>");
+		String email = req.getParameter("email");
+		String password = req.getParameter("password");
+		String instituicao = req.getParameter("instituicao");
+		String areaDeAtuacao = req.getParameter("area");
 		
-		super.doPost(req, resp);
+		User user = new User(email, password, instituicao, areaDeAtuacao);
+		
+		
 	}
 }

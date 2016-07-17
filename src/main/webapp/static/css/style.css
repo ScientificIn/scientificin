@@ -54,3 +54,7 @@ body {
 .logo {
 	margin: 0 15% auto;
 }
+
+.error {
+	color: red;
+}
