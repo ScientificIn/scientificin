@@ -6,9 +6,9 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<title>ScientificIn</title>
 	
-	<link rel="stylesheet" href="/static/css/bootstrap.min.css"/>
-	<link rel="stylesheet" href="/static/css/bootstrap-theme.min.css"/>
-	<link rel="stylesheet" href="/static/css/jqcloud.min.css"/>
-	<link rel="stylesheet" href="/static/css/style.css"/>
+	<link rel="stylesheet" href="static/css/bootstrap.min.css"/>
+	<link rel="stylesheet" href="static/css/bootstrap-theme.min.css"/>
+	<link rel="stylesheet" href="static/css/jqcloud.min.css"/>
+	<link rel="stylesheet" href="static/css/style.css"/>
 </head>
 <body>

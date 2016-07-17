@@ -10,13 +10,13 @@
 	<div class="index-video-container col-sm-12">
 		<video class="index-video" controls="controls" autoplay="autoplay"
 			loop="loop">
-			<source src="/static/video/blind-remi.mp4" type="video/mp4">
+			<source src="static/video/blind-remi.mp4" type="video/mp4">
 		</video>
 
 	</div>
 	
 	<a class="logo" href="/about">
-		<img src="/static/img/logo.png" />
+		<img src="static/img/logo.png" />
 	</a>
 </div>
 
