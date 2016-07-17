@@ -6,6 +6,12 @@
 <button type="button" class="btn btn-info btn-lg" data-toggle="modal"
 	data-target="#registerModal">Registre-se</button>
 
+<div class="container-fluid">
+	<video width="320" height="240" autoplay="autoplay" loop="loop">
+		<source src="/static/video/blind-remi.mp4" type="video/mp4">
+	</video>
+</div>
+
 <!-- Modal do Login -->
 <div id="loginModal" class="modal fade" role="dialog">
 	<div class="modal-dialog">
