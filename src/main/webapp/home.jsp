@@ -4,11 +4,11 @@
 
 	<div class="col-md-8">
 		<nav class="integracoes">
-			<a href="#"><img class="icone" src="/static/img/lattes_icon.png" /></a>
-			<a href="#"><img class="icone" src="/static/img/github_icon.png" /></a>
+			<a href="#"><img class="icone" src="static/img/lattes_icon.png" /></a>
+			<a href="#"><img class="icone" src="static/img/github_icon.png" /></a>
 			<a href="#"><img class="icone"
-				src="/static/img/facebook_icon.svg.png" /></a> <a href="#"><img
-				class="icone" src="/static/img/linkedin_icon.svg.png" /></a>
+				src="static/img/facebook_icon.svg.png" /></a> <a href="#"><img
+				class="icone" src="static/img/linkedin_icon.svg.png" /></a>
 		</nav>
 		
 		<div class="options-container">
@@ -25,7 +25,7 @@
 
 	<div class="identity col-md-4">
 		<h2>Roberto Carlos Top</h2>
-		<a href="#"><img class="foto-perfil" src="/static/img/foto-perfil.jpg" /></a>
+		<a href="#"><img class="foto-perfil" src="static/img/foto-perfil.jpg" /></a>
 
 		<div id="cloud-home" class="cloud-tag jqcloud"></div>
 	</div>
