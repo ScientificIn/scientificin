@@ -1,4 +1,3 @@
-/* home */
 $(document).ready(function() {
   var words = [{
     text: "Lorem",

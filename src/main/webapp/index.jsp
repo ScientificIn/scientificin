@@ -56,21 +56,40 @@
 				<h4 class="modal-title">Faça seu registro no ScientificIn</h4>
 			</div>
 			<div class="modal-body">
-				<form role="form" method="post" action="/cadastrar">
+				<form name="cadastro" role="form" method="post" action="/cadastro">
 					<div class="form-group">
-						<label for="email">Escolha um e-mail:</label> 
-						<input class="form-control" type="email" name="email" />
+						<label for="email">Escolha um e-mail:</label>
+						<input onkeyup="validateRegisterForm();" class="form-control" type="email" name="email" />
+						<span class="help-inline error" style="display:none;">O e-mail digitado não é válido</span>
+					</div>
 
+					<div class="form-group">
 						<label for="password">Escolha uma senha:</label>
-						<input class="form-control" type="password" name="password" /> 
-						
+						<input onblur="validateRegisterForm();" class="form-control" type="password" name="password" />
+						<span class="help-inline error" style="display:none;">A senha e sua confirmação são diferentes.</span> 
+					</div>
+					
+					<div class="form-group">
 						<label for="confirmation">Confirme a senha escolhida:</label> 
-						<input class="form-control" type="password" name="confirmation" />
+						<input onblur="validateRegisterForm();" class="form-control" type="password" name="confirmation" />
+						<span class="help-inline" style="display:none;">A senha e sua confirmação são diferentes.</span>
+					</div>
+					
+					<div class="form-group">
+						<label for="instituicao">Sua instituição de ensino:</label> 
+						<input onkeyup="validateRegisterForm();" class="form-control" type="text" name="instituicao" />
+						<span class="help-inline" style="display:none;"></span>
+					</div>
+					
+					<div class="form-group">
+						<label for="area">Sua área de atuação:</label> 
+						<input onkeyup="validateRegisterForm();" class="form-control" type="text" name="area" />
+						<span class="help-inline" style="display:none;"></span>
 					</div>
 				</form>
 			</div>
 			<div class="modal-footer">
-				<button type="button" class="btn btn-default" data-dismiss="modal">Cadastre-se!</button>
+				<button type="button" class="btn btn-default" onclick="registerUser()">Cadastre-se!</button>
 				<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
 			</div>
 		</div>
