@@ -17,11 +17,22 @@ public class Sci extends AbstractPersistable<Long> implements UserDetails{
 
 	private String username;
 	private String password;
+	private String instituicao;
+	private String areaDeAtuacao;
 	
 	private boolean enabled;
 	private boolean credentialsExpired;
 	private boolean locked;
 	private boolean accountExpired;
+	
+	public Sci(String username, String password) {
+		this.username = username;
+		this.password = password;
+		this.enabled = true;
+		this.credentialsExpired = false;
+		this.locked = false;
+		this.accountExpired = false;
+	}
 
 	@Override
 	public Collection<? extends GrantedAuthority> getAuthorities() {
@@ -85,6 +96,22 @@ public class Sci extends AbstractPersistable<Long> implements UserDetails{
 	@Override
 	public Long getId() {
 		return super.getId();
+	}
+
+	public String getInstituicao() {
+		return instituicao;
+	}
+
+	public void setInstituicao(String instituicao) {
+		this.instituicao = instituicao;
+	}
+
+	public String getAreaDeAtuacao() {
+		return areaDeAtuacao;
+	}
+
+	public void setAreaDeAtuacao(String areaDeAtuacao) {
+		this.areaDeAtuacao = areaDeAtuacao;
 	}
 
 }

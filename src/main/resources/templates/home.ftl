@@ -1,7 +1,5 @@
 <#include "/header.ftl">
 
-
-
 <div class="jumbotron">
 	<div class="container">
 		<div class="col-lg-4">

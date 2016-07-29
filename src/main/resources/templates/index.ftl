@@ -8,7 +8,7 @@
 
 <div class="container col-sm-6 pull-right">
 	<div class="index-video-container col-sm-12">
-		<video class="index-video" controls="controls" autoplay="autoplay"
+		<video class="index-video" controls="controls" autoplay="autoplay" muted="muted"
 			loop="loop">
 			<source src="/video/blind-remi.mp4" type="video/mp4">
 		</video>
@@ -57,6 +57,8 @@
 			</div>
 			<div class="modal-body">
 				<form name="cadastro" role="form" method="post" action="/cadastro">
+					<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
+					
 					<div class="form-group">
 						<label for="email">Escolha um e-mail:</label>
 						<input onkeyup="validateRegisterForm();" class="form-control" type="email" name="email" />
@@ -82,8 +84,8 @@
 					</div>
 					
 					<div class="form-group">
-						<label for="area">Sua área de atuação:</label> 
-						<input onkeyup="validateRegisterForm();" class="form-control" type="text" name="area" />
+						<label for="areaDeAtuacao">Sua área de atuação:</label> 
+						<input onkeyup="validateRegisterForm();" class="form-control" type="text" name="areaDeAtuacao" />
 						<span class="help-inline" style="display:none;"></span>
 					</div>
 				</form>
