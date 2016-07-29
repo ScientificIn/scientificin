@@ -1,0 +1,81 @@
+/* Gerais para todas as páginas */
+body {
+	background-color: white;
+	padding-top: 60px;
+}
+
+@media (max-width: 979px) {
+  body {
+    padding-top: 0px;
+  }
+}
+
+.icone {
+	height: 48px;
+	widows: 48px;
+}
+
+
+/* home */
+.integracoes {
+	padding-top: 1%;
+	padding-left: 2%;
+}
+
+.foto-perfil {
+	display: inline-block;
+	border-radius: 20px 0 20px 20px;
+	border: 3px solid cornflowerblue;
+}
+
+.options-container {
+	text-align: center;
+	margin: 0 auto;
+	padding: 0 10%;
+}
+.options {
+	position: relative;
+	float: left;
+	text-align: center;
+}
+.main-button {
+	border: 2px solid black;
+	background-color: cornflowerblue;
+}
+
+.identity {
+	text-align: center;
+}
+
+/* index */
+.index-video {
+    width: 100%;
+    margin: 1% auto;
+}
+.index-video-container {
+    background-color: black;
+    margin: 5px;
+    border-radius: 2%;
+}
+
+.logo {
+	margin: 0 15% auto;
+}
+
+.error {
+	color: red;
+}
+
+
+/* Customize container */
+/* @media (min-width: 768px) {
+  .container {
+    max-width: 830px;
+  }
+}
+ */
+
+/* .jumbotron {
+  text-align: left;
+  border-bottom: 1px solid #e5e5e5;
+} */
