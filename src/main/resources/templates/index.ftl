@@ -67,13 +67,13 @@
 
 					<div class="form-group">
 						<label for="password">Escolha uma senha:</label>
-						<input onblur="validateRegisterForm();" class="form-control" type="password" name="password" />
+						<input onblur="validateRegisterForm();" class="form-control" type="password" name="password" placeholder="Mínimo de 8 dígitos"/>
 						<span class="help-inline error" style="display:none;">A senha e sua confirmação são diferentes.</span> 
 					</div>
 					
 					<div class="form-group">
 						<label for="confirmation">Confirme a senha escolhida:</label> 
-						<input onblur="validateRegisterForm();" class="form-control" type="password" name="confirmation" />
+						<input onblur="validateRegisterForm();" class="form-control" type="password" name="confirmation" placeholder="Mínimo de 8 dígitos"/>
 						<span class="help-inline" style="display:none;">A senha e sua confirmação são diferentes.</span>
 					</div>
 					

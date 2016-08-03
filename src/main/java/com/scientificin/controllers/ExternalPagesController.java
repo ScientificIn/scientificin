@@ -1,5 +1,7 @@
 package com.scientificin.controllers;
 
+import javax.servlet.http.HttpServletResponse;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -22,7 +24,7 @@ public class ExternalPagesController {
 	}
 	
 	@RequestMapping(value="/cadastro", method=RequestMethod.POST)
-	public String cadastrar (Model model, @ModelAttribute("cadastro") FormCadastro form) {
+	public String cadastrar (Model model, @ModelAttribute("cadastro") FormCadastro form, HttpServletResponse resp) {
 		if (form.validate()) {
 			sciRepo.save(new Sci(form.getEmail(), form.getPassword()));
 			
