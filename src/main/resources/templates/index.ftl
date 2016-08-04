@@ -8,7 +8,6 @@
 <!--<video id="video" class="video" autoplay muted loop>-->
   <video id="video" class="video" autoplay loop>
     <source src="/video/blind-remi.mp4" type="video/mp4">
-
   </video>
   
 <#include "/footer.ftl">
