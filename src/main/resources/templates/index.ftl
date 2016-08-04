@@ -79,13 +79,21 @@
 					
 					<div class="form-group">
 						<label for="instituicao">Sua instituição de ensino:</label> 
-						<input onkeyup="validateRegisterForm();" class="form-control" type="text" name="instituicao" />
+						<select class="form-control" name="instituicao">
+							<#list grandesAreas as ga>
+								<option value="${ga.id}">${ga.nome}</option>
+							</#list>
+						</select>
 						<span class="help-inline" style="display:none;"></span>
 					</div>
 					
 					<div class="form-group">
 						<label for="areaDeAtuacao">Sua área de atuação:</label> 
-						<input onkeyup="validateRegisterForm();" class="form-control" type="text" name="areaDeAtuacao" />
+						<select class="form-control" name="areaDeAtuacao" >
+							<#list instituicoes as inst>
+								<option value="${inst.id}">${inst.nome}</option>
+							</#list>
+						</select>
 						<span class="help-inline" style="display:none;"></span>
 					</div>
 				</form>
