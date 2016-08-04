@@ -33,4 +33,10 @@ public class ExternalPagesController {
 			return "index";
 		}
 	}
+	//@RequestMapping(value="/busca", method=RequestMethod.POST)
+	@RequestMapping("/busca")
+	public String busca (Model model, @ModelAttribute("busca") FormCadastro form) {
+		return "Busca2";
+	}
+	
 }
