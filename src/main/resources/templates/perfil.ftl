@@ -15,40 +15,52 @@
 </div>
 
 
-
 <div class="container">
-	<div class="col-lg-3">
-		<ul class="nav nav-pills nav-stacked">
-			<li role="presentation" class="active"><a href="#">Papers</a></li>
-			<li role="presentation"><a href="#">Livros</a></li>
-			<li role="presentation"><a href="#">Confer�ncias</a></li>
-		</ul>
+	<div class="col-lg-6">
+	Sobre Roberto Carlos:
+		Maecenas sed diam eget risus varius blandit sit amet non magna.
+		Maecenas sed diam eget risus varius blandit sit amet non magna.
+		Maecenas sed diam eget risus varius blandit sit amet non magna.
+		Maecenas sed diam eget risus varius blandit sit amet non magna.
+		Maecenas sed diam eget risus varius blandit sit amet non magna.
+		Maecenas sed diam eget risus varius blandit sit amet non magna.
+	</div>
+	<div class="col-lg-6">
+	Nuvem de tags
+	</div>
+</div>
+
+
+<div class="container matcherBox">
+	<div class="col-lg-6">
+	<b>Matcher</b>
+	Roberto Carlos procura:
+	<ul>
+	<li>
+	O cara que pensa em você toda hora
+	</li>
+	<li>
+	Que conta os segundos se você demora
+	</li>
+	<li>
+	Que está todo o tempo querendo te ver
+	</li>
+	</ul>
 	</div>
 
-	<div class="col-lg-9">
-
-<div class="page-header">
-  <h3>Sobre</h3>
+	<div class="col-lg-6">
+			  <p><a class="btn btn-primary btn-lg" href="#" role="button">Quero</a></p>
+			  <p><a class="btn btn-primary btn-lg" href="#" role="button">Indicar alguém</a></p>
+	</div>
 </div>
-		<p>Donec id elit non mi porta gravida at eget metus. Maecenas
-			faucibus mollis interdum.</p>
 
-		<p>Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
-			Cras mattis consectetur purus sit amet fermentum.</p>
 
-		<p>Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
-		<p>Donec id elit non mi porta gravida at eget metus. Maecenas
-			faucibus mollis interdum.</p>
+<div class="container">
 
-		<p>Donec id elit non mi porta gravida at eget metus. Maecenas
-			faucibus mollis interdum.</p>
-
-		<p>Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
-			Cras mattis consectetur purus sit amet fermentum.</p>
-
+	<div class="col-lg-12">
 
 <div class="page-header">
-  <h3>Papers</h3>
+  <h3>Artigos</h3>
 </div>
 
 		<p>Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
@@ -93,7 +105,7 @@
 			Cras mattis consectetur purus sit amet fermentum.</p>
 
 <div class="page-header">
-  <h3>Confer�ncias</h3>
+  <h3>Congressos�ncias</h3>
 </div>
 		<p>Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
 
