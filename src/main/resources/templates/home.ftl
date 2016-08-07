@@ -3,12 +3,12 @@
 <div class="jumbotron">
 	<div class="container">
 		<div class="col-lg-4">
-			<a href="#"><img src="/img/emoji.png" width="50%" alt="Foto de Roberto"/></a>
+			<a href="#"><img src="/img/emoji.png" width="50%" alt="Foto de ${sci.nome?split(" ")[0]}"/></a>
 		</div>
 		<div class="col-lg-8">
-		<h2>Roberto Carlos</h2>
-			<p>Universidade Federal do ABC</p>
-			<p>Centro de Matem�tica, Computa��o e Cogni��o</p>
+		<h2>${sci.nome}</h2>
+			<p>${sci.instituicao.nome}</p>
+			<p>${sci.areaDeAtuacao.nome}</p>
 			  <p><a class="btn btn-primary btn-lg" href="#" role="button">Seguir</a></p>
 		</div>
 	</div>
@@ -21,7 +21,7 @@
 		<ul class="nav nav-pills nav-stacked">
 			<li role="presentation" class="active"><a href="#">Papers</a></li>
 			<li role="presentation"><a href="#">Livros</a></li>
-			<li role="presentation"><a href="#">Confer�ncias</a></li>
+			<li role="presentation"><a href="#">Conferências</a></li>
 		</ul>
 	</div>
 
@@ -30,116 +30,21 @@
 <div class="page-header">
   <h3>Sobre</h3>
 </div>
-		<p>Donec id elit non mi porta gravida at eget metus. Maecenas
-			faucibus mollis interdum.</p>
-
-		<p>Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
-			Cras mattis consectetur purus sit amet fermentum.</p>
-
-		<p>Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
-		<p>Donec id elit non mi porta gravida at eget metus. Maecenas
-			faucibus mollis interdum.</p>
-
-		<p>Donec id elit non mi porta gravida at eget metus. Maecenas
-			faucibus mollis interdum.</p>
-
-		<p>Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
-			Cras mattis consectetur purus sit amet fermentum.</p>
-
-
+	<p>${sci.biografia}</p>
 <div class="page-header">
   <h3>Papers</h3>
 </div>
-
-		<p>Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
-		<p>Donec id elit non mi porta gravida at eget metus. Maecenas
-			faucibus mollis interdum.</p>
-
-		<p>Donec id elit non mi porta gravida at eget metus. Maecenas
-			faucibus mollis interdum.</p>
-
-		<p>Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
-			Cras mattis consectetur purus sit amet fermentum.</p>
-
-		<p>Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
-		<p>Donec id elit non mi porta gravida at eget metus. Maecenas
-			faucibus mollis interdum.</p>
-
-		<p>Donec id elit non mi porta gravida at eget metus. Maecenas
-			faucibus mollis interdum.</p>
-
+	<#list sci.trabalhos as trabalho>
+		<a href="/detalhesTrabalho/${trabalho.id}">${trabalho.nome}</a>
+	</#list>
 
 <div class="page-header">
-  <h3>Livros</h3>
+  <h3>Conferências</h3>
 </div>
-		<p>Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
-			Cras mattis consectetur purus sit amet fermentum.</p>
-
-		<p>Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
-		<p>Donec id elit non mi porta gravida at eget metus. Maecenas
-			faucibus mollis interdum.</p>
-
-		<p>Donec id elit non mi porta gravida at eget metus. Maecenas
-			faucibus mollis interdum.</p>
-
-		<p>Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
-			Cras mattis consectetur purus sit amet fermentum.</p>
-
-		<p>Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
-		<p>Donec id elit non mi porta gravida at eget metus. Maecenas
-			faucibus mollis interdum.</p>
-
-		<p>Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
-			Cras mattis consectetur purus sit amet fermentum.</p>
-
-<div class="page-header">
-  <h3>Confer�ncias</h3>
+	<#list sci.conferencias as conferencia>
+		<a href="${conferencia.url}">Foi ${conferencia.cargo} na conferência ${conferencia.nome} em ${conferencia.data}</a>
+	</#list>
 </div>
-		<p>Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
-
-		<p>Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
-
-		<p>Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
-			Cras mattis consectetur purus sit amet fermentum.</p>
-
-		<p>Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
-		<p>Donec id elit non mi porta gravida at eget metus. Maecenas
-			faucibus mollis interdum.</p>
-
-		<p>Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
-			Cras mattis consectetur purus sit amet fermentum.</p>
-
-		<p>Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
-		<p>Donec id elit non mi porta gravida at eget metus. Maecenas
-			faucibus mollis interdum.</p>
-
-		<p>Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
-			Cras mattis consectetur purus sit amet fermentum.</p>
-
-		<p>Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
-		<p>Donec id elit non mi porta gravida at eget metus. Maecenas
-			faucibus mollis interdum.</p>
-
-		<p>Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
-			Cras mattis consectetur purus sit amet fermentum.</p>
-
-		<p>Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
-		<p>Donec id elit non mi porta gravida at eget metus. Maecenas
-			faucibus mollis interdum.</p>
-
-		<p>Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
-			Cras mattis consectetur purus sit amet fermentum.</p>
-
-		<p>Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
-		<p>Donec id elit non mi porta gravida at eget metus. Maecenas
-			faucibus mollis interdum.</p>
-
-		<p>Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
-			Cras mattis consectetur purus sit amet fermentum.</p>
-
-		<p>Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
-	</div>
-
 </div>
 
 

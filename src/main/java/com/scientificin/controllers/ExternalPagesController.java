@@ -1,10 +1,12 @@
 package com.scientificin.controllers;
 
+import java.security.SecureRandom;
 import java.util.List;
 
 import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -37,15 +39,20 @@ public class ExternalPagesController {
 		return instRepo.findAll();
 	}
 
-	@RequestMapping({"/login", "/", "cadastro"})
+	@RequestMapping({"/login", "/", "/cadastro"})
 	public String index (Model model) {
 		return "index";
 	}
 	
 	@RequestMapping(value="/cadastro", method=RequestMethod.POST)
-	public String cadastrar (Model model, @ModelAttribute("cadastro") FormCadastro form, HttpServletResponse resp) {
+	public String cadastrar (Model model, FormCadastro form, HttpServletResponse resp) {
 		if (form.validate()) {
-			sciRepo.save(new Sci(form.getEmail(), form.getPassword()));
+			Instituicao instituicao = instRepo.findOne(form.getInstituicao());
+			GrandeAreaDoConhecimento grandeAreaDoConhecimento = grandesAreasRepo.findOne(form.getAreaDeAtuacao());
+			
+			BCryptPasswordEncoder encrypter = new BCryptPasswordEncoder(5, new SecureRandom());
+			
+			sciRepo.save(new Sci(form.getNome(), form.getEmail(), encrypter.encode(form.getPassword()), instituicao, grandeAreaDoConhecimento));
 			
 			model.addAttribute("success", true);
 			return "home";
@@ -54,7 +61,12 @@ public class ExternalPagesController {
 			return "index";
 		}
 	}
-	//@RequestMapping(value="/busca", method=RequestMethod.POST)
+	
+	@RequestMapping(value="/login", method=RequestMethod.POST)
+	public String login() {
+		return "home";
+	}
+	
 	@RequestMapping("/busca")
 	public String busca (Model model, @ModelAttribute("busca") FormCadastro form) {
 		return "Busca2";

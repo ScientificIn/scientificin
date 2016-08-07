@@ -20,8 +20,9 @@ public class FormCadastro extends BaseForm {
 	private String email;
 	private String password;
 	private String confirmation;
-	private String instituicao;
-	private String areaDeAtuacao;
+	private Long instituicao;
+	private Long areaDeAtuacao;
+	private String nome;
 
 	public String getEmail() {
 		return email;
@@ -39,19 +40,19 @@ public class FormCadastro extends BaseForm {
 		this.password = password;
 	}
 
-	public String getInstituicao() {
+	public Long getInstituicao() {
 		return instituicao;
 	}
 
-	public void setInstituicao(String instituicao) {
+	public void setInstituicao(Long instituicao) {
 		this.instituicao = instituicao;
 	}
 
-	public String getAreaDeAtuacao() {
+	public Long getAreaDeAtuacao() {
 		return areaDeAtuacao;
 	}
 
-	public void setAreaDeAtuacao(String areaDeAtuacao) {
+	public void setAreaDeAtuacao(Long areaDeAtuacao) {
 		this.areaDeAtuacao = areaDeAtuacao;
 	}
 	
@@ -62,6 +63,14 @@ public class FormCadastro extends BaseForm {
 	public void setConfirmation(String confirmation) {
 		this.confirmation = confirmation;
 	}
+	
+	public String getNome() {
+		return nome;
+	}
+
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
 
 	@Override
 	public boolean validate() {
@@ -69,6 +78,7 @@ public class FormCadastro extends BaseForm {
 				 VALID_EMAIL_ADDRESS_PATTERN.matcher(email).matches() &&
 				 password.length() >= MINIMAL_PASSWORD_LENGTH && password.equals(confirmation) &&
 				 instituicao != null &&
+				 (nome != null && nome.length() <= 100) &&
 				 areaDeAtuacao != null;
 	}
 

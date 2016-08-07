@@ -2,10 +2,12 @@ package com.scientificin.entities;
 
 import java.util.Arrays;
 import java.util.Collection;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 
 import org.hibernate.validator.constraints.Email;
 import org.springframework.data.jpa.domain.AbstractPersistable;
@@ -14,23 +16,49 @@ import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
 @Entity
-public class Sci extends AbstractPersistable<Long> implements UserDetails{
-
-	private static final long serialVersionUID = -3562775848596581645L;
-
-	@Email @Column(length=128, nullable=false, unique=true) String username;
-	@Column(nullable=false, length=256) String password;
-	@ManyToOne Instituicao instituicao;
-	@ManyToOne GrandeAreaDoConhecimento areaDeAtuacao;
+public class Sci extends AbstractPersistable<Long> implements UserDetails {
 	
+	private static final long serialVersionUID = 4726410886334429761L;
+
+	@Email
+	@Column(length = 128, nullable = false, unique = true)
+	String username;
+	@Column(nullable = false, length = 256)
+	String password;
+	@Column(length = 1000)
+	String biografia;
+	@Column(length = 100)
+	String nome;
+
+	@ManyToOne
+	Instituicao instituicao;
+	@ManyToOne
+	GrandeAreaDoConhecimento areaDeAtuacao;
+	@OneToMany
+	List<Trabalho> trabalhos;
+	@OneToMany
+	List<Conferencia> conferencias;
+
 	boolean enabled;
 	boolean credentialsExpired;
 	boolean locked;
 	boolean accountExpired;
-	
+
 	public Sci(String username, String password) {
 		this.username = username;
 		this.password = password;
+		this.enabled = true;
+		this.credentialsExpired = false;
+		this.locked = false;
+		this.accountExpired = false;
+	}
+
+	public Sci(String nome, String email, String senha, Instituicao instituicao, GrandeAreaDoConhecimento areaDeAtuacao) {
+		this.nome = nome;
+		this.username = email;
+		this.password = senha;
+		this.instituicao = instituicao;
+		this.areaDeAtuacao = areaDeAtuacao;
 		this.enabled = true;
 		this.credentialsExpired = false;
 		this.locked = false;
@@ -71,7 +99,7 @@ public class Sci extends AbstractPersistable<Long> implements UserDetails{
 	public boolean isEnabled() {
 		return enabled;
 	}
-	
+
 	public void setCredentialsExpired(boolean credentialsExpired) {
 		this.credentialsExpired = credentialsExpired;
 	}
@@ -95,7 +123,7 @@ public class Sci extends AbstractPersistable<Long> implements UserDetails{
 	public void setPassword(String password) {
 		this.password = password;
 	}
-	
+
 	@Override
 	public Long getId() {
 		return super.getId();
@@ -115,6 +143,38 @@ public class Sci extends AbstractPersistable<Long> implements UserDetails{
 
 	public void setAreaDeAtuacao(GrandeAreaDoConhecimento areaDeAtuacao) {
 		this.areaDeAtuacao = areaDeAtuacao;
+	}
+
+	public String getBiografia() {
+		return biografia;
+	}
+
+	public void setBiografia(String biografia) {
+		this.biografia = biografia;
+	}
+
+	public String getNome() {
+		return nome;
+	}
+
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+
+	public List<Trabalho> getTrabalhos() {
+		return trabalhos;
+	}
+
+	public void setTrabalhos(List<Trabalho> trabalhos) {
+		this.trabalhos = trabalhos;
+	}
+
+	public List<Conferencia> getConferencias() {
+		return conferencias;
+	}
+
+	public void setConferencias(List<Conferencia> conferencias) {
+		this.conferencias = conferencias;
 	}
 
 }
