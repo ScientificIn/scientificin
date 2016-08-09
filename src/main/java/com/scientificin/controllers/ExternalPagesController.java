@@ -62,6 +62,16 @@ public class ExternalPagesController {
 		}
 	}
 	
+	@RequestMapping(value="/perfil", method=RequestMethod.GET)
+	public String perfil() {
+		return "perfil";
+	}
+
+	@RequestMapping(value="/home", method=RequestMethod.GET)
+	public String home() {
+		return "home";
+	}
+
 	@RequestMapping(value="/login", method=RequestMethod.POST)
 	public String login() {
 		return "home";

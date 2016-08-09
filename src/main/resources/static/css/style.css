@@ -1,6 +1,6 @@
 /* Gerais para todas as páginas */
 body {
-	background-color: white;
+	background-color: WhiteSmoke;
 	padding-top: 60px;
 }
 
@@ -16,11 +16,29 @@ body {
 }
 
 
-/* home */
+/* home e perfil */
 .integracoes {
 	padding-top: 1%;
 	padding-left: 2%;
 }
+
+.homeFirstBox {
+	background-color: white;
+	margin-bottom: 10px;
+}
+
+.mainBox {
+	background-color: white;
+	margin-bottom: 10px;
+}
+
+
+.matcherBox {
+	background-color: Gainsboro;
+	margin-bottom: 10px;
+	margin-top: 10px;
+}
+
 
 .foto-perfil {
 	display: inline-block;
