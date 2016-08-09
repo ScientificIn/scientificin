@@ -13,4 +13,6 @@
 </head>
 <body>
 
-<#include "/navbar.ftl">
+<#if springMacroRequestContext.getRequestUri() != "/">
+	<#include "/navbar.ftl">
+</#if>
