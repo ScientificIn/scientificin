@@ -18,7 +18,8 @@ import org.springframework.security.core.userdetails.UserDetails;
 @Entity
 public class Sci extends AbstractPersistable<Long> implements UserDetails {
 	
-	private static final long serialVersionUID = 4726410886334429761L;
+
+	private static final long serialVersionUID = -362867738177003476L;
 
 	@Email
 	@Column(length = 128, nullable = false, unique = true)
@@ -43,6 +44,10 @@ public class Sci extends AbstractPersistable<Long> implements UserDetails {
 	boolean credentialsExpired;
 	boolean locked;
 	boolean accountExpired;
+	
+	public Sci() {
+		super();
+	}
 
 	public Sci(String username, String password) {
 		this.username = username;
