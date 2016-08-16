@@ -14,16 +14,19 @@
 	</div>
 </div>
 
-
 <div class="container">
 	<div class="col-lg-6">
 	Sobre Roberto Carlos:
+
+      <#-- ${aluno.biografia} -->
+
 		Maecenas sed diam eget risus varius blandit sit amet non magna.
 		Maecenas sed diam eget risus varius blandit sit amet non magna.
 		Maecenas sed diam eget risus varius blandit sit amet non magna.
 		Maecenas sed diam eget risus varius blandit sit amet non magna.
 		Maecenas sed diam eget risus varius blandit sit amet non magna.
 		Maecenas sed diam eget risus varius blandit sit amet non magna.
+
 	</div>
 	<div class="col-lg-6">
 	Nuvem de tags
@@ -84,6 +87,7 @@
 <div class="page-header">
   <h3>Livros</h3>
 </div>
+<div class="testeClass">
 		<p>Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
 			Cras mattis consectetur purus sit amet fermentum.</p>
 
@@ -103,6 +107,7 @@
 
 		<p>Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
 			Cras mattis consectetur purus sit amet fermentum.</p>
+</div>
 
 <div class="page-header">
   <h3>Congressos�ncias</h3>
@@ -188,5 +193,7 @@
 
 </div> 
  -->
+ 
+ 
  
  <#include "/footer.ftl">

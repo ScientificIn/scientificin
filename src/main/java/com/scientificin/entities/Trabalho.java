@@ -4,6 +4,7 @@ import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 import javax.persistence.OneToMany;
 
@@ -11,6 +12,12 @@ import org.springframework.data.jpa.domain.AbstractPersistable;
 
 @Entity
 public class Trabalho extends AbstractPersistable<Long> {
+	
+	public enum TipoDeTrabalho {
+		Artigo,
+		Livro,
+		ProjetoDePesquisa
+	}
 
 	private static final long serialVersionUID = 8901353480917316536L;
 
@@ -22,6 +29,10 @@ public class Trabalho extends AbstractPersistable<Long> {
 	String texto;
 	@Column
 	Integer posicao;
+
+	@Column
+    @Enumerated(EnumType.STRING)
+	TipoDeTrabalho tipoDeTrabalho;
 	@Column
 	Integer posicaoNaArea;
 	@Column
