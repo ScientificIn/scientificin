@@ -39,10 +39,10 @@
 			<a href="/rankings">${trabalho.posicao}</a>
 			
 			<label>Ranking na área:</label>
-			<a href="/rankings/area/${trabalho.posicaoNaArea}">1�</a>
+			<a href="/rankings/area/${trabalho.area}">${trabalho.posicaoNaArea}</a>
 			
 			<label>Ranking na sub-área</label>
-			<a href="/rankings/subarea/${trabalho.posicaoNaSubArea}">1�</a>
+			<a href="/rankings/subarea/${trabalho.subArea}">${trabalho.posicaoNaSubArea}</a>
 			
 			<div class="comentarios">
 				<#list trabalho.avaliacoes as aval>

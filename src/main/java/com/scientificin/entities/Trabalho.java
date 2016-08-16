@@ -4,6 +4,7 @@ import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.Enumerated;
 import javax.persistence.OneToMany;
 
 import org.springframework.data.jpa.domain.AbstractPersistable;
@@ -12,7 +13,7 @@ import org.springframework.data.jpa.domain.AbstractPersistable;
 public class Trabalho extends AbstractPersistable<Long> {
 
 	private static final long serialVersionUID = 8901353480917316536L;
-	
+
 	@Column(length = 512)
 	String notasDoAutor;
 	@Column(length = 256)
@@ -32,6 +33,11 @@ public class Trabalho extends AbstractPersistable<Long> {
 	List<Recurso> recursos;
 	@OneToMany
 	List<Bibliografia> bibliografias;
+
+	@Enumerated
+	AreaDoConhecimento area;
+	@Enumerated
+	SubAreaDoConhecimento subArea;
 
 	public String getNotasDoAutor() {
 		return notasDoAutor;
@@ -103,6 +109,22 @@ public class Trabalho extends AbstractPersistable<Long> {
 
 	public void setBibliografias(List<Bibliografia> bibliografias) {
 		this.bibliografias = bibliografias;
+	}
+
+	public AreaDoConhecimento getArea() {
+		return area;
+	}
+
+	public void setArea(AreaDoConhecimento area) {
+		this.area = area;
+	}
+
+	public SubAreaDoConhecimento getSubArea() {
+		return subArea;
+	}
+
+	public void setSubArea(SubAreaDoConhecimento subArea) {
+		this.subArea = subArea;
 	}
 
 }
