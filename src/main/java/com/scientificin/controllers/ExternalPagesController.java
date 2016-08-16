@@ -64,8 +64,7 @@ public class ExternalPagesController {
 	
 	@RequestMapping(value="/perfil", method=RequestMethod.GET)
 	public String perfil(Model model) {
-		
-		model.addAttribute("aluno", sciRepo.findOne(1L));
+		model.addAttribute("aluno", sciRepo.findOne(2L));
 		return "perfil";
 	}
 

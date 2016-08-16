@@ -18,6 +18,7 @@
 	<div class="col-lg-6">
 	Sobre Roberto Carlos:
 
+      ${aluno.biografia}
       <#-- ${aluno.biografia} -->
 
 		Maecenas sed diam eget risus varius blandit sit amet non magna.

@@ -501,3 +501,8 @@ INSERT INTO sub_areas_do_conhecimento (area_do_conhecimento_id, nome) VALUES (77
 INSERT INTO sub_areas_do_conhecimento (area_do_conhecimento_id, nome) VALUES (77,'Cinema');
 INSERT INTO sub_areas_do_conhecimento (area_do_conhecimento_id, nome) VALUES (77,'Artes do Vídeo');
 INSERT INTO sub_areas_do_conhecimento (area_do_conhecimento_id, nome) VALUES (77,'Educação Artística');
+
+
+UPDATE sci
+SET instituicao_id = '1', area_de_atuacao_id = '1', biografia = 'Texto da biografia, Blau'
+WHERE username = 'andre';
