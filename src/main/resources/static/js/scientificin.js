@@ -29,3 +29,11 @@ $(document).ready(function() {
     });
 
 });
+
+
+// Script para expandir texto ("read more")
+$(".testeClass").shorten({
+	"showChars" : 400,
+	"moreText"	: "Ver mais",
+	"lessText"	: "Menos",
+});
