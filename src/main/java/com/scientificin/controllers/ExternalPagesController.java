@@ -12,11 +12,12 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.scientificin.beans.forms.FormCadastro;
-import com.scientificin.entities.GrandeAreaDoConhecimento;
-import com.scientificin.entities.Instituicao;
 import com.scientificin.entities.Sci;
+import com.scientificin.entities.options.GrandeAreaDoConhecimento;
+import com.scientificin.entities.options.Instituicao;
 import com.scientificin.repositories.AreasDoConhecimentoRepository;
 import com.scientificin.repositories.GrandesAreasDoConhecimentoRepository;
 import com.scientificin.repositories.InstiuicoesRepository;
@@ -39,7 +40,24 @@ public class ExternalPagesController {
 		return instRepo.findAll();
 	}
 
-	@RequestMapping({"/login", "/", "/cadastro"})
+	@RequestMapping(value = "/login", method = RequestMethod.GET)
+	public String login(@RequestParam(value = "error", required = false) String error,
+		@RequestParam(value = "logout", required = false) String logout,
+		Model model) {
+	  if (error != null) {
+		model.addAttribute("error", "Usuário ou senha inválidos.");
+		return "index";
+	  }
+
+	  if (logout != null) {
+		model.addAttribute("msg", "Você foi desconectado.");
+		return "index";
+	  }
+	  
+	  return "home";
+	}
+	
+	@RequestMapping("/")
 	public String index (Model model) {
 		return "index";
 	}
@@ -70,11 +88,6 @@ public class ExternalPagesController {
 
 	@RequestMapping(value="/home", method=RequestMethod.GET)
 	public String home() {
-		return "home";
-	}
-
-	@RequestMapping(value="/login", method=RequestMethod.POST)
-	public String login() {
 		return "home";
 	}
 	

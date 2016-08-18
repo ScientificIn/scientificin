@@ -4,51 +4,47 @@ import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.EnumType;
-import javax.persistence.Enumerated;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+import javax.persistence.Table;
 
 import org.springframework.data.jpa.domain.AbstractPersistable;
 
+import com.scientificin.entities.options.AreaDoConhecimento;
+import com.scientificin.entities.options.SubAreaDoConhecimento;
+import com.scientificin.entities.options.TipoDeTrabalho;
+
 @Entity
+@Table(name = "trabalhos")
 public class Trabalho extends AbstractPersistable<Long> {
-	
-	public enum TipoDeTrabalho {
-		Artigo,
-		Livro,
-		ProjetoDePesquisa
-	}
 
 	private static final long serialVersionUID = 8901353480917316536L;
 
 	@Column(length = 512)
-	String notasDoAutor;
+	private String notasDoAutor;
 	@Column(length = 256)
-	String titulo;
-	@Column
-	String texto;
-	@Column
-	Integer posicao;
+	private String titulo;
+	private String texto;
+	private Integer posicao;
 
-	@Column
-    @Enumerated(EnumType.STRING)
-	TipoDeTrabalho tipoDeTrabalho;
-	@Column
-	Integer posicaoNaArea;
-	@Column
-	Integer posicaoNaSubArea;
+	private Integer posicaoNaArea;
+	private Integer posicaoNaSubArea;
 
 	@OneToMany
-	List<Avaliacao> avaliacoes;
+	private List<Avaliacao> avaliacoes;
 	@OneToMany
-	List<Recurso> recursos;
+	private List<Recurso> recursos;
 	@OneToMany
-	List<Bibliografia> bibliografias;
+	private List<Bibliografia> bibliografias;
 
-	@Enumerated
-	AreaDoConhecimento area;
-	@Enumerated
-	SubAreaDoConhecimento subArea;
+	@ManyToOne
+	private AreaDoConhecimento area;
+	@ManyToOne
+	private SubAreaDoConhecimento subArea;
+	@ManyToOne
+	private TipoDeTrabalho tipoDeTrabalho;
+	@ManyToOne
+	private Sci autor;
 
 	public String getNotasDoAutor() {
 		return notasDoAutor;
@@ -136,6 +132,14 @@ public class Trabalho extends AbstractPersistable<Long> {
 
 	public void setSubArea(SubAreaDoConhecimento subArea) {
 		this.subArea = subArea;
+	}
+
+	public Sci getAutor() {
+		return autor;
+	}
+
+	public void setAutor(Sci autor) {
+		this.autor = autor;
 	}
 
 }

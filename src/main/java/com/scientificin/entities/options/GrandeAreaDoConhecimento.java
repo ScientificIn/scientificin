@@ -1,4 +1,4 @@
-package com.scientificin.entities;
+package com.scientificin.entities.options;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

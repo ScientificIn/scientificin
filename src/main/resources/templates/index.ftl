@@ -27,15 +27,16 @@
 				<h4 class="modal-title">Faça login no ScientificIn</h4>
 			</div>
 			<div class="modal-body">
-				<form role="form" method="post" action="/login">
+				<form role="form" method="post" id="login" name="login" action="/login">
 					<div class="form-group">
-						<input class="form-control" type="email" name="email" placeholder="E-mail" /> 
+						<input class="form-control" type="text" name="username" placeholder="E-mail" /> 
 						<input class="form-control" type="password" name="password" placeholder="Senha" />
+						<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
 					</div> 
 				</form>
 			</div>
 			<div class="modal-footer">
-				<button type="button" class="btn btn-default" data-dismiss="modal">Login</button>
+				<button type="button" class="btn btn-default" onclick="$('form[name=\'login\']').submit();">Login</button>
 				<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
 			</div>
 		</div>
@@ -54,8 +55,6 @@
 			</div>
 			<div class="modal-body">
 				<form name="cadastro" role="form" method="post" action="/cadastro">
-					<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
-					
 					<div class="form-group">
 						<label for="nome">Qual seu nome?</label>
 						<input onkeyup="validateRegisterForm();" class="form-control" type="text" name="nome" />

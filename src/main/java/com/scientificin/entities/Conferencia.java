@@ -4,13 +4,22 @@ import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
 import org.springframework.data.jpa.domain.AbstractPersistable;
 
 @Entity
+@Table(name="conferencias")
 public class Conferencia extends AbstractPersistable<Long> {
+	
+	private String url;
+	@Column(nullable = false)
+	private String cargo;
+	private String nome;
+	@Temporal(TemporalType.DATE)
+	private Date data;
 
 	private static final long serialVersionUID = -862778785556943913L;
 
@@ -45,12 +54,4 @@ public class Conferencia extends AbstractPersistable<Long> {
 	public void setData(Date data) {
 		this.data = data;
 	}
-
-	String url;
-	@Column(nullable = false)
-	String cargo;
-	String nome;
-	@Temporal(TemporalType.DATE)
-	Date data;
-
 }

@@ -15,6 +15,9 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
+import com.scientificin.entities.options.GrandeAreaDoConhecimento;
+import com.scientificin.entities.options.Instituicao;
+
 @Entity
 public class Sci extends AbstractPersistable<Long> implements UserDetails {
 	
@@ -72,7 +75,7 @@ public class Sci extends AbstractPersistable<Long> implements UserDetails {
 
 	@Override
 	public Collection<? extends GrantedAuthority> getAuthorities() {
-		return Arrays.asList(new SimpleGrantedAuthority("IN"));
+		return Arrays.asList(new SimpleGrantedAuthority("USER"));
 	}
 
 	@Override
