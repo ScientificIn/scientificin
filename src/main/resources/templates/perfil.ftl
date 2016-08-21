@@ -3,12 +3,16 @@
 <div class="jumbotron">
 	<div class="container">
 		<div class="col-lg-4">
-			<a href="#"><img src="/img/emoji.png" width="50%" alt="Foto de Roberto"/></a>
+			<a href="#"><img src="/img/emoji.png" width="50%"/></a>
 		</div>
 		<div class="col-lg-8">
-		<h2>Roberto Carlos</h2>
-			<p>Universidade Federal do ABC</p>
-			<p>Centro de Matem�tica, Computa��o e Cogni��o</p>
+
+		<h2>${aluno.nome}</h2>
+			<p>${aluno.instituicao.nome} (${aluno.instituicao.sigla})</p>
+
+      <#-- <p>Centro de Matem�tica, Computa��o e Cogni��o</p> -->
+			<p>${aluno.areaDeAtuacao.nome}</p>
+			
 			  <p><a class="btn btn-primary btn-lg" href="#" role="button">Seguir</a></p>
 		</div>
 	</div>
@@ -20,13 +24,6 @@
 
       ${aluno.biografia}
       <#-- ${aluno.biografia} -->
-
-		Maecenas sed diam eget risus varius blandit sit amet non magna.
-		Maecenas sed diam eget risus varius blandit sit amet non magna.
-		Maecenas sed diam eget risus varius blandit sit amet non magna.
-		Maecenas sed diam eget risus varius blandit sit amet non magna.
-		Maecenas sed diam eget risus varius blandit sit amet non magna.
-		Maecenas sed diam eget risus varius blandit sit amet non magna.
 
 	</div>
 	<div class="col-lg-6">

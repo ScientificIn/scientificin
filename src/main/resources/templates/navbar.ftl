@@ -34,17 +34,17 @@
       </ul>
       <form class="navbar-form navbar-left" role="search">
         <div class="form-group">
-          <input type="text" class="form-control" placeholder="Nome, IES ou área">
+          <input type="text" class="form-control" placeholder="Nome, IES ou ï¿½rea">
         </div>
         <button type="submit" class="btn btn-default">Buscar</button>
       </form>
       <ul class="nav navbar-nav navbar-right">
 <!--         <li><a href="#">Link</a></li>
  -->        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Nome</a>
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">${aluno.nome}</a>
           <ul class="dropdown-menu">
             <li><a href="#">Editar perfil</a></li>
-            <li><a href="#">Opções</a></li>
+            <li><a href="#">Opï¿½ï¿½es</a></li>
             <li role="separator" class="divider"></li>
             <li><a href="#">Sair</a></li>
           </ul>
