@@ -41,7 +41,14 @@
       <ul class="nav navbar-nav navbar-right">
 <!--         <li><a href="#">Link</a></li>
  -->        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">${aluno.nome}</a>
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+          
+<#if aluno??>
+          ${aluno.nome}
+</#if>
+          
+          
+          </a>
           <ul class="dropdown-menu">
             <li><a href="#">Editar perfil</a></li>
             <li><a href="#">Op��es</a></li>

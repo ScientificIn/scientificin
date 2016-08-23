@@ -2,8 +2,7 @@
 
 <div class="container homeFirstBox">
 
-			<div class="col-lg-6">
-			Roberto Carlos <br>
+			<div class="col-lg-6"> Roberto Carlos <br>
 			  <p><a class="btn btn-primary btn-lg" href="#" role="button">Editar perfil</a></p>
 			</div>
 

@@ -30,6 +30,15 @@ $(document).ready(function() {
 
 });
 
+// Usados para esconder input na tela de edicao de perfil
+$('#alterarNomeBtn').click(function() {
+    $('#alterarNomeDiv').toggle();
+});
+
+
+$('#alterarIESBtn').click(function() {
+    $('#alterarIESDiv').toggle();
+});
 
 // Script para expandir texto ("read more")
 //$(".testeClass").shorten({
