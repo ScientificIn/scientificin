@@ -6,6 +6,7 @@ import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
@@ -38,9 +39,9 @@ public class Sci extends AbstractPersistable<Long> implements UserDetails {
 	Instituicao instituicao;
 	@ManyToOne
 	GrandeAreaDoConhecimento areaDeAtuacao;
-	@OneToMany
+	@OneToMany(fetch=FetchType.EAGER)
 	List<Trabalho> trabalhos;
-	@OneToMany
+	@OneToMany(fetch=FetchType.EAGER)
 	List<Conferencia> conferencias;
 
 	boolean enabled;
