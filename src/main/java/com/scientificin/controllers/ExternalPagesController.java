@@ -95,6 +95,15 @@ public class ExternalPagesController {
 		return "perfil";
 	}
 
+
+	//	in progress!
+	// @RequestMapping(value="/perfil", method=RequestMethod.GET)
+	// public String alteracaoPerfil(Model model) {
+	// 	// model.addAttribute("aluno", sciRepo.findOne(1L));
+	// 	Sci aluno = sciRepo.findOne(1L);
+	// 	return "perfil";
+	// }
+
 	@RequestMapping(value="/home", method=RequestMethod.GET)
 	public String home() {
 		return "home";
