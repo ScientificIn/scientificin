@@ -7,11 +7,11 @@ import java.util.List;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
+import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
 import org.hibernate.validator.constraints.Email;
-import org.springframework.data.jpa.domain.AbstractPersistable;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -20,11 +20,11 @@ import com.scientificin.entities.options.GrandeAreaDoConhecimento;
 import com.scientificin.entities.options.Instituicao;
 
 @Entity
-public class Sci extends AbstractPersistable<Long> implements UserDetails {
+public class Sci implements UserDetails {
+
+	private static final long serialVersionUID = 5042444429158150046L;
 	
-
-	private static final long serialVersionUID = -362867738177003476L;
-
+	@Id
 	@Email
 	@Column(length = 128, nullable = false, unique = true)
 	String username;
@@ -131,11 +131,6 @@ public class Sci extends AbstractPersistable<Long> implements UserDetails {
 
 	public void setPassword(String password) {
 		this.password = password;
-	}
-
-	@Override
-	public Long getId() {
-		return super.getId();
 	}
 
 	public Instituicao getInstituicao() {

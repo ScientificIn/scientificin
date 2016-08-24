@@ -51,9 +51,13 @@
           </a>
           <ul class="dropdown-menu">
             <li><a href="#">Editar perfil</a></li>
-            <li><a href="#">Op��es</a></li>
+            <li><a href="#">Opções</a></li>
             <li role="separator" class="divider"></li>
-            <li><a href="#">Sair</a></li>
+            <li>
+            	<form action="/logout" method="post">
+		            <input type="submit" value="Sair"/>
+		        </form>
+            </li>
           </ul>
         </li>
       </ul>

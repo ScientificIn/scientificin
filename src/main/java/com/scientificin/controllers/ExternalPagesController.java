@@ -1,7 +1,6 @@
 package com.scientificin.controllers;
 
 import java.security.SecureRandom;
-import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -21,14 +20,14 @@ import com.scientificin.entities.Estagio;
 import com.scientificin.entities.Sci;
 import com.scientificin.entities.options.GrandeAreaDoConhecimento;
 import com.scientificin.entities.options.Instituicao;
-import com.scientificin.repositories.AreasDoConhecimentoRepository;
-import com.scientificin.repositories.GrandesAreasDoConhecimentoRepository;
-import com.scientificin.repositories.InstiuicoesRepository;
-import com.scientificin.repositories.SciRepository;
 import com.scientificin.repositories.AlunoRepository;
+import com.scientificin.repositories.AreasDoConhecimentoRepository;
 import com.scientificin.repositories.EstagiarioRepository;
 import com.scientificin.repositories.EstagioRepository;
+import com.scientificin.repositories.GrandesAreasDoConhecimentoRepository;
+import com.scientificin.repositories.InstiuicoesRepository;
 import com.scientificin.repositories.OrientadorRepository;
+import com.scientificin.repositories.SciRepository;
 import com.scientificin.repositories.SociedadeRepository;
 
 @Controller
@@ -52,27 +51,15 @@ public class ExternalPagesController {
 	public List<Instituicao>  getSubAreas () {
 		return instRepo.findAll();
 	}
-
-	@RequestMapping(value = "/login", method = RequestMethod.GET)
-	public String login(@RequestParam(value = "error", required = false) String error,
-		@RequestParam(value = "logout", required = false) String logout,
-		Model model) {
-	  if (error != null) {
-		model.addAttribute("error", "Usuário ou senha inválidos.");
-		return "index";
-	  }
-
-	  if (logout != null) {
-		model.addAttribute("msg", "Você foi desconectado.");
-		return "index";
-	  }
-	  
-	  return "home";
-	}
 	
 	@RequestMapping("/")
 	public String index (Model model) {
 		return "index";
+	}
+	
+	@RequestMapping("/login")
+	public String login (Model model) {
+		return "login";
 	}
 	
 	@RequestMapping(value="/cadastro", method=RequestMethod.POST)
@@ -93,39 +80,7 @@ public class ExternalPagesController {
 		}
 	}
 	
-	//	mock!
-	@RequestMapping(value="/editarPerfil", method=RequestMethod.GET)
-	public String editarPerfil(Model model) {
-		model.addAttribute("aluno", sciRepo.findOne(1L));
-		return "editarPerfil";
-	}
-
-	//	mock!
-	@RequestMapping(value="/perfil", method=RequestMethod.GET)
-	public String perfil(Model model) {
-		model.addAttribute("aluno", sciRepo.findOne(1L));
-		Sci aluno = sciRepo.findOne(1L);
-		return "perfil";
-	}
 	
-	
-	//	mock!
-	@RequestMapping(value="/editarPerfilAction", method=RequestMethod.POST)
-	public String editarPerfilAlterarNome(Sci sci, @RequestParam("nome") String novoNome, Model model) {
-		Sci aluno = (Sci) model.asMap().get("aluno");
-		aluno.setNome(novoNome);
-		sciRepo.save(aluno);
-		return "editarPerfil";
-	}
-
-
-	//	in progress!
-	// @RequestMapping(value="/perfil", method=RequestMethod.GET)
-	// public String alteracaoPerfil(Model model) {
-	// 	// model.addAttribute("aluno", sciRepo.findOne(1L));
-	// 	Sci aluno = sciRepo.findOne(1L);
-	// 	return "perfil";
-	// }
 
 	@RequestMapping(value="/home", method=RequestMethod.GET)
 	public String home() {
@@ -176,7 +131,8 @@ public class ExternalPagesController {
 		if(arr[4] != null)
 			model.addAttribute("listAluno",AlunoRep.findAlunoByArea(arr[4]));
 		
-		model.addAttribute("arr",arr);		
+
+		model.addAttribute("arr",arr);
 		return "findResult";
 	}
 	
