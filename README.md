@@ -8,8 +8,8 @@ Para rodar o projeto, serão necessárias as seguintes tecnologias:
 * Spring Boot;
 * Maven;
 
-1 - Importe o projeto como um projeto Maven.
-2 - Dê um maven update (alt + f5) no projeto.
-3 - Clique com o botão direito no projeto -> run as... -> maven build...
-4 - No input "goals" digite "clean spring-boot:run"
-5 - Pronto! O projeto deve subir sem problemas.
+- Importe o projeto como um projeto Maven.
+- Dê um maven update (alt + f5) no projeto.
+- Clique com o botão direito no projeto -> run as... -> maven build...
+- No input "goals" digite "clean spring-boot:run"
+- Pronto! O projeto deve subir sem problemas.
