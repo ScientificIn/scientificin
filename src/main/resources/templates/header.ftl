@@ -9,7 +9,12 @@
 	<link rel="stylesheet" href="/css/jqcloud.min.css"/>
 	<link rel="stylesheet" href="/css/style.css"/>
 	<link rel="stylesheet" href="/css/teste.css">
-	<link rel="stylesheet" href="/css/teste2.css">
+	<#if springMacroRequestContext.getRequestUri() == "/" || springMacroRequestContext.getRequestUri() == "/index">
+		<link rel="stylesheet" href="/css/teste2.css">
+	</#if>
+	<#if springMacroRequestContext.getRequestUri() == "/login">
+		<link rel="stylesheet" href="/css/teste3.css">
+	</#if>
 	
 </head>
 <body>

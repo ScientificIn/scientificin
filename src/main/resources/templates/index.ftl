@@ -4,11 +4,10 @@
     <h1>Bem-vindo a scientificIn</h1>
     <p>Versão Alfa0.1 da index do site do projeto!.</p>
     
-    <button type="button" class="btn btn-info btn-lg" data-toggle="modal"
-	data-target="#modalLogin">Login</button>
-
-	<button type="button" class="btn btn-info btn-lg" data-toggle="modal"
-	data-target="#modalCadastro">Registre-se</button>
+	<a data-toggle="modal" href="#modalCadastro">Cadastre-se!</a>     
+    <br><br> 
+    <p>Já possui conta?</p>     
+    <a data-toggle="modal" href="#modalLogin">Entre!</a> 
   </div>
   
   

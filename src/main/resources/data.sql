@@ -787,3 +787,19 @@ INSERT INTO recursos (link, nome, trabalho_id) VALUES ('http://facebook.com.br/6
 INSERT INTO recursos (link, nome, trabalho_id) VALUES ('http://facebook.com.br/1', 'meuFace de Teste 1', 5);
 INSERT INTO recursos (link, nome, trabalho_id) VALUES ('http://facebook.com.br/2', 'meuFace de Teste 2', 5);
 INSERT INTO recursos (link, nome, trabalho_id) VALUES ('http://facebook.com.br/3', 'meuFace de Teste 3', 5);
+
+INSERT INTO Estagio (EMPRESA,DESCR, area) VALUES ('ITAU', 'INFERNO PROFISSIONAL', 'TELEMETRIA');
+INSERT INTO Estagio (EMPRESA,DESCR, area) VALUES ('ITAU', 'INFERNO PROFISSIONAL', 'COMP');
+INSERT INTO Estagiario (EMPRESA, DESCR, AREA) VALUES ('BLIZZARD', 'TESTER DE OVERWATCH 4EVER!!', 'PSEUDO FELICIDADE');
+
+INSERT INTO Estagiario (EMPRESA, DESCR, AREA) VALUES ('BLIZZARD', 'TESTER DE OVERWATCH 4EVER!!', 'FELICIDADE');
+INSERT INTO Estagiario (EMPRESA, DESCR, AREA) VALUES ('BLIZZARD', 'TESTER DE OVERWATCH 4EVER!!', 'COMP');
+
+INSERT INTO Sociedade (DONO, EMPRESA, DESCR,AREA) VALUES ('Gabe newell master race','VALVE', 'Dividir muito dinheiro', 'FELICIDADE');
+INSERT INTO Sociedade (DONO, EMPRESA, DESCR,AREA) VALUES ('Gabe newell master race','VALVE', 'lavagem de dinheiro', 'COMP');
+
+INSERT INTO Orientador (ORIENTADO, DESCR, AREA) VALUES ('STEPHEN HAWKIENN', 'PAZ MUNDIAL', 'FELICIDADE');
+INSERT INTO Orientador (ORIENTADO, DESCR, AREA) VALUES ('DALAI LAMA', 'FISICA NUCLEAR', 'FELICIDADE');
+
+INSERT INTO Aluno (ORIENTANDO, UNIVERSIDADE,DESCR, AREA) VALUES ('BRUCE LEE', 'UFCHINATOWN', 'Ryujin no ken wo kurae','FELICIDADE');
+INSERT INTO Aluno (ORIENTANDO, UNIVERSIDADE,DESCR, AREA) VALUES ('JACKIE CHAN', 'UFCHINATOWN', 'Ryuu ga waga teki wo kurau','FELICIDADE');
