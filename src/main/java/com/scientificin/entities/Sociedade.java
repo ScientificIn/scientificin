@@ -2,59 +2,56 @@ package com.scientificin.entities;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.Table;
 
 import org.springframework.data.jpa.domain.AbstractPersistable;
 
 @Entity
-@Table(name = "Sociedade")
-public class Sociedade extends AbstractPersistable<Long>  {
+public class Sociedade extends AbstractPersistable<Long> {
 
 	private static final long serialVersionUID = -510946305376112674L;
-	
-	@Column(nullable=false, length=256)
-	public String DONO;
-	
-	@Column(nullable=false, length=256)
-	public String EMPRESA;
-	
-	@Column(nullable=false, length=256)
-	public String DESCR;
-	
-	@Column(nullable=false, length=256)
-	public String AREA;
 
-	public String getDONO() {
-		return DONO;
+	@Column(nullable = false, length = 256)
+	public String dono;
+
+	@Column(nullable = false, length = 256)
+	public String empresa;
+
+	@Column(nullable = false, length = 256)
+	public String descricao;
+
+	@Column(nullable = false, length = 256)
+	public String area;
+
+	public String getDono() {
+		return dono;
 	}
 
-	public void setDONO(String dONO) {
-		DONO = dONO;
+	public void setDono(String dono) {
+		this.dono = dono;
 	}
 
-	public String getEMPRESA() {
-		return EMPRESA;
+	public String getEmpresa() {
+		return empresa;
 	}
 
-	public void setEMPRESA(String eMPRESA) {
-		EMPRESA = eMPRESA;
+	public void setEmpresa(String empresa) {
+		this.empresa = empresa;
 	}
 
-	public String getDESCR() {
-		return DESCR;
+	public String getDescricao() {
+		return descricao;
 	}
 
-	public void setDESC(String dESCR) {
-		DESCR = dESCR;
+	public void setDescricao(String descricao) {
+		this.descricao = descricao;
 	}
 
-	public String getAREA() {
-		return AREA;
+	public String getArea() {
+		return area;
 	}
 
-	public void setAREA(String aREA) {
-		AREA = aREA;
+	public void setArea(String area) {
+		this.area = area;
 	}
-	
-	
+
 }

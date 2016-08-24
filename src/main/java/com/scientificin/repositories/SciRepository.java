@@ -8,4 +8,6 @@ public interface SciRepository extends JpaRepository<Sci, Long>{
 
 	Sci findByUsername(String username);
 
+	Sci findByUsernameAndPassword(String username, String password);
+
 }

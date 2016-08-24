@@ -2,7 +2,9 @@
 
 <div class="container homeFirstBox">
 
-			<div class="col-lg-6"> Roberto Carlos <br>
+			<h2>Olá, <span style="font-weight: bold;">${Session.sci.nome}</span>, navegue em uma das opções:</h2>
+			
+			<div class="col-lg-6">
 			  <p><a class="btn btn-primary btn-lg" href="#" role="button">Editar perfil</a></p>
 			</div>
 
@@ -14,12 +16,28 @@
 
 <div class="container homeFirstBox">
 
-			<div class="col-lg-6">
-			Eventos
+			<div class="panel panel-default col-md-6">
+			  <div class="panel-heading">Últimas conferências</div>
+			  <div class="panel-body">
+			  	<#list sci.conferencias as conferencia>
+			  		<div class="panel panel-success">
+			  			<div class="panel-heading">${conferencia.nome}, ${conferencia.data}</div>
+			  			<div class="panel-body">Você foi ${conferencia.cargo} nesta conferência. <a href="${conferencia.url}">Clique aqui</a> para ir ao site do evento.</div>
+			  		</div>
+			  	</#list>
+			  </div>
 			</div>
 
-			<div class="col-lg-6">
-			Livros
+			<div class="panel panel-default col-md-6">
+			  <div class="panel-heading">Últimos trabalhos</div>
+			  <div class="panel-body">
+			  	<#list sci.trabalhos as trabalho>
+				  	<div class="panel panel-success">
+				  		<div class="panel-heading">${trabalho.titulo}, <span style="font-size:14px;">${trabalho.posicao}</span></div>
+			  			<div class="panel-body">${trabalho.notasDoAutor}<br><br>${trabalho.area.nome}</div>
+				  	</div>
+			  	</#list>
+			  </div>
 			</div>
 
 </div>

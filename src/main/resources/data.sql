@@ -716,9 +716,9 @@ INSERT INTO sub_areas_do_conhecimento (area_do_conhecimento_id, nome) VALUES (77
 INSERT INTO sub_areas_do_conhecimento (area_do_conhecimento_id, nome) VALUES (77,'Educação Artística');
 
 -- Inserts de usuários iniciais pra testarmos.
-INSERT INTO sci (account_expired, biografia, credentials_expired, enabled, locked, nome, password, username, area_de_atuacao_id, instituicao_id) VALUES (false, 'biografia teste 1', false, true, false, 'nome teste 1', 'teste1', 'teste1', 1, 1);
-INSERT INTO sci (account_expired, biografia, credentials_expired, enabled, locked, nome, password, username, area_de_atuacao_id, instituicao_id) VALUES (false, 'biografia teste 2', false, true, false, 'nome teste 2', 'teste2', 'lambda', 2, 2);
-INSERT INTO sci (account_expired, biografia, credentials_expired, enabled, locked, nome, password, username, area_de_atuacao_id, instituicao_id) VALUES (false, 'biografia teste 3', false, true, false, 'nome teste 3', 'teste3', 'teste3@teste3.com', 3, 3);
+INSERT INTO sci (biografia, nome, password, username, area_de_atuacao_id, instituicao_id) VALUES ('biografia teste 1', 'nome teste 1', '$2a$10$kH/aLs8SCBsffNNhOGutxeFGKOhLmU5.cECqKGzXoVYA2o21ebMTe', 'teste1', 1, 1);
+INSERT INTO sci (biografia, nome, password, username, area_de_atuacao_id, instituicao_id) VALUES ('biografia teste 2', 'nome teste 2', '$2a$10$fNa6DHkff/f5OHrd73..6esoxwd27MDtfCa.UbWvokPVHhmLI2t6G', 'lambda', 2, 2);
+INSERT INTO sci (biografia, nome, password, username, area_de_atuacao_id, instituicao_id) VALUES ('biografia teste 3', 'nome teste 3', '$2a$10$4Mt2An1akNnpV8uSls74Zu8VAGsB4N5bVID6XA1Wxt5O0Zu00kY6y', 'teste3@teste3.com', 3, 3);
 
 -- Inserts de roles dos usuários.
 INSERT INTO user_roles (username, role) VALUES ('teste1', 'SCI');
@@ -788,18 +788,22 @@ INSERT INTO recursos (link, nome, trabalho_id) VALUES ('http://facebook.com.br/1
 INSERT INTO recursos (link, nome, trabalho_id) VALUES ('http://facebook.com.br/2', 'meuFace de Teste 2', 5);
 INSERT INTO recursos (link, nome, trabalho_id) VALUES ('http://facebook.com.br/3', 'meuFace de Teste 3', 5);
 
-INSERT INTO Estagio (EMPRESA,DESCR, area) VALUES ('ITAU', 'INFERNO PROFISSIONAL', 'TELEMETRIA');
-INSERT INTO Estagio (EMPRESA,DESCR, area) VALUES ('ITAU', 'INFERNO PROFISSIONAL', 'COMP');
-INSERT INTO Estagiario (EMPRESA, DESCR, AREA) VALUES ('BLIZZARD', 'TESTER DE OVERWATCH 4EVER!!', 'PSEUDO FELICIDADE');
+INSERT INTO conferencias (cargo, data, nome, url, sci_username) VALUES ('apresentador', NOW(), 'I Simposio de Computaçao UFABC', 'http://simposio1.com', 'teste1');
+INSERT INTO conferencias (cargo, data, nome, url, sci_username) VALUES ('locutor', NOW(), 'II Simposio de Computaçao UFABC', 'http://simposio2.com', 'lambda');
+INSERT INTO conferencias (cargo, data, nome, url, sci_username) VALUES ('ouvinte', NOW(), 'III Simposio de Computaçao UFABC', 'http://simposio3.com', 'teste3@teste3.com');
 
-INSERT INTO Estagiario (EMPRESA, DESCR, AREA) VALUES ('BLIZZARD', 'TESTER DE OVERWATCH 4EVER!!', 'FELICIDADE');
-INSERT INTO Estagiario (EMPRESA, DESCR, AREA) VALUES ('BLIZZARD', 'TESTER DE OVERWATCH 4EVER!!', 'COMP');
+INSERT INTO estagio (empresa,descricao, area) VALUES ('ITAU', 'INFERNO PROFISSIONAL', 'TELEMETRIA');
+INSERT INTO estagio (empresa,descricao, area) VALUES ('ITAU', 'INFERNO PROFISSIONAL', 'COMP');
+INSERT INTO estagiario (empresa, descricao, area) VALUES ('BLIZZARD', 'TESTER DE OVERWATCH 4EVER!!', 'PSEUDO FELICIDADE');
 
-INSERT INTO Sociedade (DONO, EMPRESA, DESCR,AREA) VALUES ('Gabe newell master race','VALVE', 'Dividir muito dinheiro', 'FELICIDADE');
-INSERT INTO Sociedade (DONO, EMPRESA, DESCR,AREA) VALUES ('Gabe newell master race','VALVE', 'lavagem de dinheiro', 'COMP');
+INSERT INTO estagiario (empresa, descricao, area) VALUES ('BLIZZARD', 'TESTER DE OVERWATCH 4EVER!!', 'FELICIDADE');
+INSERT INTO estagiario (empresa, descricao, area) VALUES ('BLIZZARD', 'TESTER DE OVERWATCH 4EVER!!', 'COMP');
 
-INSERT INTO Orientador (ORIENTADO, DESCR, AREA) VALUES ('STEPHEN HAWKIENN', 'PAZ MUNDIAL', 'FELICIDADE');
-INSERT INTO Orientador (ORIENTADO, DESCR, AREA) VALUES ('DALAI LAMA', 'FISICA NUCLEAR', 'FELICIDADE');
+INSERT INTO sociedade (dono, empresa, descricao,area) VALUES ('Gabe newell master race','VALVE', 'Dividir muito dinheiro', 'FELICIDADE');
+INSERT INTO sociedade (dono, empresa, descricao,area) VALUES ('Gabe newell master race','VALVE', 'lavagem de dinheiro', 'COMP');
 
-INSERT INTO Aluno (ORIENTANDO, UNIVERSIDADE,DESCR, AREA) VALUES ('BRUCE LEE', 'UFCHINATOWN', 'Ryujin no ken wo kurae','FELICIDADE');
-INSERT INTO Aluno (ORIENTANDO, UNIVERSIDADE,DESCR, AREA) VALUES ('JACKIE CHAN', 'UFCHINATOWN', 'Ryuu ga waga teki wo kurau','FELICIDADE');
+INSERT INTO orientador (orientado, descricao, area) VALUES ('STEPHEN HAWKIENN', 'PAZ MUNDIAL', 'FELICIDADE');
+INSERT INTO orientador (orientado, descricao, area) VALUES ('DALAI LAMA', 'FISICA NUCLEAR', 'FELICIDADE');
+
+INSERT INTO aluno (orientando, universidade,descricao, area) VALUES ('BRUCE LEE', 'UFCHINATOWN', 'Ryujin no ken wo kurae','FELICIDADE');
+INSERT INTO aluno (orientando, universidade,descricao, area) VALUES ('JACKIE CHAN', 'UFCHINATOWN', 'Ryuu ga waga teki wo kurau','FELICIDADE');

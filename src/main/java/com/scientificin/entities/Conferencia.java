@@ -4,6 +4,7 @@ import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -11,8 +12,10 @@ import javax.persistence.TemporalType;
 import org.springframework.data.jpa.domain.AbstractPersistable;
 
 @Entity
-@Table(name="conferencias")
+@Table(name = "conferencias")
 public class Conferencia extends AbstractPersistable<Long> {
+
+	private static final long serialVersionUID = 6440296134471816993L;
 	
 	private String url;
 	@Column(nullable = false)
@@ -21,7 +24,16 @@ public class Conferencia extends AbstractPersistable<Long> {
 	@Temporal(TemporalType.DATE)
 	private Date data;
 
-	private static final long serialVersionUID = -862778785556943913L;
+	@ManyToOne
+	private Sci sci;
+
+	public Sci getSci() {
+		return sci;
+	}
+
+	public void setSci(Sci sci) {
+		this.sci = sci;
+	}
 
 	public String getUrl() {
 		return url;

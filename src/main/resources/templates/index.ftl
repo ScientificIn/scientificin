@@ -30,7 +30,6 @@
 					<div class="form-group">
 						<input class="form-control" type="text" name="username" placeholder="E-mail" /> 
 						<input class="form-control" type="password" name="password" placeholder="Senha" />
-						<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
 					</div> 
 				</form>
 			</div>

@@ -2,49 +2,45 @@ package com.scientificin.entities;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.Table;
 
 import org.springframework.data.jpa.domain.AbstractPersistable;
 
 @Entity
-@Table(name = "Estagiario")
-public class Estagiario extends AbstractPersistable<Long>  {
-	
+public class Estagiario extends AbstractPersistable<Long> {
 
-	@Column(nullable=false, length=256)
-	public String EMPRESA;
-	
-	@Column(nullable=false, length=256)
-	public String DESCR;
-	
-	@Column(nullable=false, length=256)
-	public String AREA;
+	private static final long serialVersionUID = 3690557973414394778L;
 
-	public String getEMPRESA() {
-		return EMPRESA;
+	@Column(nullable = false, length = 256)
+	public String empresa;
+
+	@Column(nullable = false, length = 256)
+	public String descricao;
+
+	@Column(nullable = false, length = 256)
+	public String area;
+
+	public String getEmpresa() {
+		return empresa;
 	}
 
-	public void setEMPRESA(String eMPRESA) {
-		EMPRESA = eMPRESA;
+	public void setEmpresa(String empresa) {
+		this.empresa = empresa;
 	}
 
-	public String getAREA() {
-		return AREA;
+	public String getDescricao() {
+		return descricao;
 	}
 
-	public void setAREA(String aREA) {
-		AREA = aREA;
+	public void setDescricao(String descricao) {
+		this.descricao = descricao;
 	}
 
-	public String getDESCR() {
-		return DESCR;
+	public String getArea() {
+		return area;
 	}
 
-	public void setDESCR(String dESCR) {
-		DESCR = dESCR;
+	public void setArea(String area) {
+		this.area = area;
 	}
-	
-	
-	
 
 }

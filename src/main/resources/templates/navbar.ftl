@@ -34,7 +34,7 @@
       </ul>
       <form class="navbar-form navbar-left" role="search">
         <div class="form-group">
-          <input type="text" class="form-control" placeholder="Nome, IES ou �rea">
+          <input type="text" class="form-control" placeholder="Nome, IES ou área">
         </div>
         <button type="submit" class="btn btn-default">Buscar</button>
       </form>

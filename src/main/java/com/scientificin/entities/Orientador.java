@@ -2,63 +2,45 @@ package com.scientificin.entities;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.Table;
 
 import org.springframework.data.jpa.domain.AbstractPersistable;
 
 @Entity
-@Table(name="Orientador")
 public class Orientador extends AbstractPersistable<Long> {
-	private static final long serialVersionUID = 5221822008049978110L;
-	
-	/*@Id
-	@GeneratedValue
-	public Long id;*/
 
-	@Column(nullable=false, length=256)
-	public String ORIENTADO;
-	
-	@Column(nullable=false, length=256)
-	public String DESCR;
-	
-	@Column(nullable=false, length=256)
-	public String AREA;
+	private static final long serialVersionUID = -7436880277945107140L;
 
-/*	public Long getId() {
-		return id;
+	@Column(nullable = false, length = 256)
+	public String orientado;
+
+	@Column(nullable = false, length = 256)
+	public String descricao;
+
+	@Column(nullable = false, length = 256)
+	public String area;
+
+	public String getOrientado() {
+		return orientado;
 	}
 
-	public void setId(Long id) {
-		this.id = id;
-	}
-*/
-	public String getORIENTADO() {
-		return ORIENTADO;
+	public void setOrientado(String orientado) {
+		this.orientado = orientado;
 	}
 
-	public void setORIENTADOR(String oRIENTADO) {
-		ORIENTADO = oRIENTADO;
+	public String getDescricao() {
+		return descricao;
 	}
 
-	public String getDESCR() {
-		return DESCR;
+	public void setDescricao(String descricao) {
+		this.descricao = descricao;
 	}
 
-	public void setDESC(String dESC) {
-		DESCR = dESC;
+	public String getArea() {
+		return area;
 	}
 
-	public String getAREA() {
-		return AREA;
+	public void setArea(String area) {
+		this.area = area;
 	}
-
-	public void setAREA(String aREA) {
-		AREA = aREA;
-	}
-	
-	
-	
 
 }
