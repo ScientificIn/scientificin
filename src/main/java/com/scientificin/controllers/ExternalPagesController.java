@@ -1,9 +1,9 @@
 package com.scientificin.controllers;
 
 import java.security.SecureRandom;
-import java.util.ArrayList;
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,19 +13,20 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.scientificin.beans.forms.FormCadastro;
 import com.scientificin.entities.Sci;
 import com.scientificin.entities.options.GrandeAreaDoConhecimento;
 import com.scientificin.entities.options.Instituicao;
-import com.scientificin.repositories.AreasDoConhecimentoRepository;
-import com.scientificin.repositories.GrandesAreasDoConhecimentoRepository;
-import com.scientificin.repositories.InstiuicoesRepository;
-import com.scientificin.repositories.SciRepository;
 import com.scientificin.repositories.AlunoRepository;
+import com.scientificin.repositories.AreasDoConhecimentoRepository;
 import com.scientificin.repositories.EstagiarioRepository;
 import com.scientificin.repositories.EstagioRepository;
+import com.scientificin.repositories.GrandesAreasDoConhecimentoRepository;
+import com.scientificin.repositories.InstiuicoesRepository;
 import com.scientificin.repositories.OrientadorRepository;
+import com.scientificin.repositories.SciRepository;
 import com.scientificin.repositories.SociedadeRepository;
 
 @Controller
@@ -78,39 +79,7 @@ public class ExternalPagesController {
 		}
 	}
 	
-	//	mock!
-	@RequestMapping(value="/editarPerfil", method=RequestMethod.GET)
-	public String editarPerfil(Model model) {
-		model.addAttribute("aluno", sciRepo.findOne(1L));
-		return "editarPerfil";
-	}
-
-	//	mock!
-	@RequestMapping(value="/perfil", method=RequestMethod.GET)
-	public String perfil(Model model) {
-		model.addAttribute("aluno", sciRepo.findOne(1L));
-		Sci aluno = sciRepo.findOne(1L);
-		return "perfil";
-	}
 	
-	
-	//	mock!
-	@RequestMapping(value="/editarPerfilAction", method=RequestMethod.POST)
-	public String editarPerfilAlterarNome(Sci sci, @RequestParam("nome") String novoNome, Model model) {
-		Sci aluno = (Sci) model.asMap().get("aluno");
-		aluno.setNome(novoNome);
-		sciRepo.save(aluno);
-		return "editarPerfil";
-	}
-
-
-	//	in progress!
-	// @RequestMapping(value="/perfil", method=RequestMethod.GET)
-	// public String alteracaoPerfil(Model model) {
-	// 	// model.addAttribute("aluno", sciRepo.findOne(1L));
-	// 	Sci aluno = sciRepo.findOne(1L);
-	// 	return "perfil";
-	// }
 
 	@RequestMapping(value="/home", method=RequestMethod.GET)
 	public String home() {
@@ -139,7 +108,7 @@ public class ExternalPagesController {
 		arr[4] = request.getParameter("Aluno");		
 		
 		
-		//mn é o input do checkbox...(obs:sei lá pq usei esse nome)
+		//mn ï¿½ o input do checkbox...(obs:sei lï¿½ pq usei esse nome)
 		for(int a = 0 ; a < 5 ; a++){
 			if(arr[a] != null)				
 				arr[a] = request.getParameter("mn"+a);
@@ -178,8 +147,8 @@ public class ExternalPagesController {
 //		Orientador testeOri = new Orientador();
 //		testeOri.id = (long) 1;
 //		testeOri.ORIENTADOR = "Vera";
-//		testeOri.DESC = "Orientação em Tecnologias para desenvolvimento WEB";
-//		testeOri.AREA = "Ciência da Computação";
+//		testeOri.DESC = "Orientaï¿½ï¿½o em Tecnologias para desenvolvimento WEB";
+//		testeOri.AREA = "Ciï¿½ncia da Computaï¿½ï¿½o";
 		
 		//Teste de lista de estagiarios	
 //		List<Estagio> listEstagio = new ArrayList<Estagio>();

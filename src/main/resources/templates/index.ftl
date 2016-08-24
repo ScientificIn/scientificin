@@ -21,14 +21,12 @@
 	<div class="modal-dialog">
 
 		<div class="modal-content">
-			<iframe src="/login"></iframe>
-		
 			<div class="modal-header">
 				<button type="button" class="close" data-dismiss="modal">&times;</button>
 				<h4 class="modal-title">Faça login no ScientificIn</h4>
 			</div>
 			<div class="modal-body">
-				<form role="form" method="post" action="/login">
+				<form role="form" method="post" id="login" action="/login">
 					<div class="form-group">
 						<input class="form-control" type="text" name="username" placeholder="E-mail" /> 
 						<input class="form-control" type="password" name="password" placeholder="Senha" />
