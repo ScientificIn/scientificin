@@ -105,6 +105,16 @@ public class ExternalPagesController {
 		Sci aluno = sciRepo.findOne(1L);
 		return "perfil";
 	}
+	
+	
+	//	mock!
+	@RequestMapping(value="/editarPerfilAction", method=RequestMethod.POST)
+	public String editarPerfilAlterarNome(Sci sci, @RequestParam("nome") String novoNome, Model model) {
+		Sci aluno = (Sci) model.asMap().get("aluno");
+		aluno.setNome(novoNome);
+		sciRepo.save(aluno);
+		return "editarPerfil";
+	}
 
 
 	//	in progress!

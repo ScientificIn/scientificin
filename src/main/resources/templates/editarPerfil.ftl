@@ -11,10 +11,13 @@
 
 <h2>${aluno.nome}</h2>
 <div id="alterarNomeDiv" style="display:none;">
-				<form name="alterar" role="form" method="post" action="/alterar">
+				<form name="cadastro" role="form" method="post" action="/editarPerfilAction">
 					<div class="form-group" >
 						<label for="nome">Qual seu nome?</label>
-						<input onkeyup="validateRegisterForm();" class="form-control" type="text" name="nome" />
+						<#-- TODO: fazer validacoes -->
+						<#-- <input onkeyup="validateRegisterForm();" class="form-control" type="text" name="nome" /> -->
+						<input class="form-control" type="text" name="nome" />
+						<button type="button" class="btn btn-default">Confirmar alteração</button>
 						<span class="help-inline error" style="display:none;">Seu nome deve ter no máximo 100 letras. Você pode abreviar os nomes do meio.</span>
 					</div>
 				</form>
@@ -201,5 +204,6 @@ Vrum
  -->
  
  
- 
- <#include "/footer.ftl">
+
+<script type="text/javascript" src="/js/indexController.js"></script>
+<#include "/footer.ftl">
