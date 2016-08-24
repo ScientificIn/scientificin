@@ -2,10 +2,12 @@ package com.scientificin.entities;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.Table;
 
 import org.springframework.data.jpa.domain.AbstractPersistable;
 
 @Entity
+@Table(name="estagiario")
 public class Estagiario extends AbstractPersistable<Long> {
 
 	private static final long serialVersionUID = 3690557973414394778L;

@@ -41,15 +41,15 @@
 	<table border = 1 id = "tabo1">
 	<caption>Estágio</caption>
 	<th>ID</th>
-	<th>EMPRESA</th>
-	<th>AREA</th>
-	<th>DESCRIÇÂO</th>
+	<th>empresa</th>
+	<th>area</th>
+	<th>descricaoIÇÂO</th>
     <#list listEstagio as lista1>
 	<tr>
-        <td> <a href="/estagio?getId=${lista1.id}">${lista1.id}</a></td>
-        <td>${lista1.EMPRESA}</td>
-        <td>${lista1.AREA}</td>
-        <td>${lista1.DESCR}</td>                
+        <td> <a href="/in/estagio/${lista1.id}">${lista1.id}</a></td>
+        <td>${lista1.empresa}</td>
+        <td>${lista1.area}</td>
+        <td>${lista1.descricao}</td>                
     </tr>			
 	</#list>		
 	</table>
@@ -62,15 +62,15 @@
 	<table border = 1 id = "tabo2">
 	<caption>Estagiário</caption>
 	<th>ID</th>
-	<th>EMPRESA</th>
-	<th>AREA</th>
-	<th>DESCRIÇÂO</th>
+	<th>empresa</th>
+	<th>area</th>
+	<th>descricaoIÇÂO</th>
     <#list listEstagiario as lista2>	
 	<tr>
         <td> <a href="/estagiario?getId=${lista2.id}">${lista2.id}</a></td>
-        <td>${lista2.EMPRESA}</td>
-        <td>${lista2.AREA}</td>
-        <td>${lista2.DESCR}</td>                
+        <td>${lista2.empresa}</td>
+        <td>${lista2.area}</td>
+        <td>${lista2.descricao}</td>                
     </tr>			
 	</#list>		
 	</table>
@@ -83,17 +83,17 @@
 	<table border = 1 id = "tabo1">
 	<caption>Sociedade</caption>
 	<th>ID</th>
-	<th>DONO</th>
-	<th>EMPRESA</th>
-	<th>AREA</th>
-	<th>DESCRIÇÂO</th>
+	<th>dono</th>
+	<th>empresa</th>
+	<th>area</th>
+	<th>descricaoIÇÂO</th>
     <#list listSocio as lista3>	
 	<tr>
         <td> <a href="/sociedade?getId=${lista3.id}">${lista3.id}</a></td>        
-        <td>${lista3.DONO}</td>
-        <td>${lista3.EMPRESA}</td>
-        <td>${lista3.AREA}</td>
-        <td>${lista3.DESCR}</td>                
+        <td>${lista3.dono}</td>
+        <td>${lista3.empresa}</td>
+        <td>${lista3.area}</td>
+        <td>${lista3.descricao}</td>                
     </tr>			
 	</#list>	
 	</table>
@@ -106,15 +106,15 @@
 	<table border = 1 id = "tabo4">
 	<caption>Orientador</caption>
 	<th>ID</th>
-	<th>ORIENTADOR</th>
-	<th>AREA</th>
-	<th>DESCRIÇÂO</th>			
+	<th>orientador</th>
+	<th>area</th>
+	<th>descricaoIÇÂO</th>			
     <#list listOrientador as lista4>	
 	<tr>
 		<td> <a href="/orientador?getId=${lista4.id}">${lista4.id}</a></td>        
-        <td>${lista4.ORIENTADOR}</td>
-        <td>${lista4.AREA}</td>
-        <td>${lista4.DESCR}</td>                
+        <td>${lista4.orientador}</td>
+        <td>${lista4.area}</td>
+        <td>${lista4.descricao}</td>                
     </tr>			
 	</#list>		
 	</table>
@@ -127,15 +127,15 @@
 	<table border = 1 id = "tabo5">
 	<caption>Aluno</caption>
 	<th>ID</th>
-	<th>ORIENTANDO</th>
-	<th>AREA</th>
-	<th>DESCRIÇÂO</th>	
+	<th>orientando</th>
+	<th>area</th>
+	<th>descricaoIÇÂO</th>	
     <#list listAluno as lista5>	
 	<tr>
-        <td> <a href="/aluno?getId=${lista5.id}">${lista5.id}</a></td>        
-        <td>${lista5.ORIENTANDO}</td>
-        <td>${lista5.AREA}</td>
-        <td>${lista5.DESCR}</td>                
+        <td> <a href="/in/aluno?getId=${lista5.id}">${lista5.id}</a></td>        
+        <td>${lista5.orientando}</td>
+        <td>${lista5.area}</td>
+        <td>${lista5.descricao}</td>                
     </tr>			
 	</#list>		
 	</table>
@@ -143,5 +143,5 @@
 </div>
 </#if>
 <br>
-<a href="/match">Voltar</a>
+<a href="/in/match">Voltar</a>
 <#include "/footer.ftl"> 

@@ -1,6 +1,6 @@
 <#include "/header.ftl"> 
 <br> 
-<form action="/match" method="post"> 
+<form action="/in/match" method="post"> 
   <p>Procurando</p> 
   <div id=mydiv0> 
     <input type="checkbox" name="Estagio" value="0" class="checkboxTeste"> Estágio<br>

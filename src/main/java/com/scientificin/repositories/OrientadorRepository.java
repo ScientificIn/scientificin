@@ -12,10 +12,10 @@ import com.scientificin.entities.Orientador;
 
 public interface OrientadorRepository extends JpaRepository<Orientador, Long>{
 	
-	@Query(nativeQuery=true, value="Select * From Orientador Where id = :parametro")
+	@Query(nativeQuery=true, value="Select * From orientador Where id = :parametro")
 	Orientador findOrById(@Param("parametro") Long id);
 	
-	@Query(nativeQuery=true, value="Select * From Orientador Where AREA Like %:area%")
+	@Query(nativeQuery=true, value="Select * From orientador Where area Like %:area%")
 	public List<Orientador> findOrByArea(@Param("area") String area);	
 
 }

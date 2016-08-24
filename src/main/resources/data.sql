@@ -802,8 +802,8 @@ INSERT INTO estagiario (empresa, descricao, area) VALUES ('BLIZZARD', 'TESTER DE
 INSERT INTO sociedade (dono, empresa, descricao,area) VALUES ('Gabe newell master race','VALVE', 'Dividir muito dinheiro', 'FELICIDADE');
 INSERT INTO sociedade (dono, empresa, descricao,area) VALUES ('Gabe newell master race','VALVE', 'lavagem de dinheiro', 'COMP');
 
-INSERT INTO orientador (orientado, descricao, area) VALUES ('STEPHEN HAWKIENN', 'PAZ MUNDIAL', 'FELICIDADE');
-INSERT INTO orientador (orientado, descricao, area) VALUES ('DALAI LAMA', 'FISICA NUCLEAR', 'FELICIDADE');
+INSERT INTO orientador (orientador, descricao, area) VALUES ('STEPHEN HAWKIENN', 'PAZ MUNDIAL', 'FELICIDADE');
+INSERT INTO orientador (orientador, descricao, area) VALUES ('DALAI LAMA', 'FISICA NUCLEAR', 'FELICIDADE');
 
 INSERT INTO aluno (orientando, universidade,descricao, area) VALUES ('BRUCE LEE', 'UFCHINATOWN', 'Ryujin no ken wo kurae','FELICIDADE');
 INSERT INTO aluno (orientando, universidade,descricao, area) VALUES ('JACKIE CHAN', 'UFCHINATOWN', 'Ryuu ga waga teki wo kurau','FELICIDADE');

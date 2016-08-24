@@ -10,10 +10,10 @@ import com.scientificin.entities.Sociedade;
 
 public interface SociedadeRepository extends JpaRepository<Sociedade, Long>{
 	
-	@Query(nativeQuery=true, value="Select * From Sociedade Where id = :parametro")
+	@Query(nativeQuery=true, value="Select * From sociedade Where id = :parametro")
 	public Sociedade findSocioById(@Param("parametro") Long id);
 	
-	@Query(nativeQuery=true, value="Select * From Sociedade Where AREA Like %:area%")
+	@Query(nativeQuery=true, value="Select * From sociedade Where area Like %:area%")
 	public List<Sociedade> findSocioByArea(@Param("area") String area);
 
 }

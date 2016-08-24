@@ -57,8 +57,10 @@ public class PerfilController {
 	
 	//	mock!
 	@RequestMapping(value="/editarPerfilAction", method=RequestMethod.POST)
-	public String editarPerfilAlterarNome(Sci sci, Model model) {
-		Sci aluno = (Sci) model.asMap().get("aluno");
+	public String editarPerfilAlterarNome(Sci sci, Model model, HttpServletRequest req) {
+		HttpSession session = req.getSession(true);
+		
+		Sci antigo = (Sci) session.getAttribute("sci");
 //		sciRepo.save(aluno);
 		return "editarPerfil";
 	}

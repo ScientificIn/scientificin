@@ -19,24 +19,28 @@
 			<div class="panel panel-default col-md-6">
 			  <div class="panel-heading">Últimas conferências</div>
 			  <div class="panel-body">
-			  	<#list Session.sci.conferencias as conferencia>
-			  		<div class="panel panel-success">
-			  			<div class="panel-heading">${conferencia.nome}, ${conferencia.data}</div>
-			  			<div class="panel-body">Você foi ${conferencia.cargo} nesta conferência. <a href="${conferencia.url}">Clique aqui</a> para ir ao site do evento.</div>
-			  		</div>
-			  	</#list>
+			  	<#if Session.sci.conferencias??>
+				  	<#list Session.sci.conferencias as conferencia>
+				  		<div class="panel panel-success">
+				  			<div class="panel-heading">${conferencia.nome}, ${conferencia.data}</div>
+				  			<div class="panel-body">Você foi ${conferencia.cargo} nesta conferência. <a href="${conferencia.url}">Clique aqui</a> para ir ao site do evento.</div>
+				  		</div>
+				  	</#list>
+				</#if>
 			  </div>
 			</div>
 
 			<div class="panel panel-default col-md-6">
 			  <div class="panel-heading">Últimos trabalhos</div>
 			  <div class="panel-body">
-			  	<#list sci.trabalhos as trabalho>
-				  	<div class="panel panel-success">
-				  		<div class="panel-heading">${trabalho.titulo}, <span style="font-size:14px;">${trabalho.posicao}</span></div>
-			  			<div class="panel-body">${trabalho.notasDoAutor}<br><br>${trabalho.area.nome}</div>
-				  	</div>
-			  	</#list>
+			  	<#if sci.trabalhos??>
+				  	<#list sci.trabalhos as trabalho>
+					  	<div class="panel panel-success">
+					  		<div class="panel-heading">${trabalho.titulo}, <span style="font-size:14px;">${trabalho.posicao}</span></div>
+				  			<div class="panel-body">${trabalho.notasDoAutor}<br><br>${trabalho.area.nome}</div>
+					  	</div>
+				  	</#list>
+				</#if>
 			  </div>
 			</div>
 

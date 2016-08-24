@@ -1,5 +1,6 @@
 package com.scientificin.controllers;
 
+import java.io.IOException;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -75,13 +76,17 @@ public class ExternalPagesController {
 	}
 	
 	@RequestMapping(value="/cadastro", method=RequestMethod.POST)
-	public String cadastrar (Model model, FormCadastro form, HttpServletResponse resp) {
+	public String cadastrar (Model model, FormCadastro form, HttpServletRequest req) {
 		if (form.validate()) {
+			HttpSession session = req.getSession(true);
+			
 			Instituicao instituicao = instRepo.findOne(form.getInstituicao());
 			GrandeAreaDoConhecimento grandeAreaDoConhecimento = grandesAreasRepo.findOne(form.getAreaDeAtuacao());
 			
-			sciRepo.save(new Sci(form.getNome(), form.getEmail(), 
+			Sci sci = sciRepo.save(new Sci(form.getNome(), form.getEmail(), 
 					BCrypt.hashpw(form.getPassword(), BCrypt.gensalt()), instituicao, grandeAreaDoConhecimento));
+
+			session.setAttribute("sci", sci);
 			
 			model.addAttribute("success", true);
 			return "home";
@@ -89,6 +94,14 @@ public class ExternalPagesController {
 			model.addAttribute("error", true);
 			return "index";
 		}
+	}
+	
+	@RequestMapping(value="/logout", method=RequestMethod.POST)
+	public void logout (HttpServletRequest req, HttpServletResponse resp) throws IOException {
+		HttpSession session = req.getSession(true);
+		
+		session.removeAttribute("sci");
+		resp.sendRedirect("/");
 	}
 
 	@RequestMapping("/busca")

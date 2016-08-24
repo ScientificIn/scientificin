@@ -11,10 +11,10 @@ import com.scientificin.entities.Aluno;
 
 public interface AlunoRepository extends JpaRepository<Aluno, Long>{
 	
-	@Query(nativeQuery=true, value="Select * From Aluno Where id = :parametro")
+	@Query(nativeQuery=true, value="Select * From aluno Where id = :parametro")
 	public Aluno findAlunoById(@Param("parametro") Long id);
 	
-	@Query(nativeQuery=true, value="Select * From Aluno Where AREA Like %:area%")
+	@Query(nativeQuery=true, value="Select * From aluno Where area Like %:area%")
 	public List<Aluno> findAlunoByArea(@Param("area") String area);
 
 }
