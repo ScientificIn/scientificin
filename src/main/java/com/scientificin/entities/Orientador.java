@@ -18,7 +18,7 @@ public class Orientador extends AbstractPersistable<Long> {
 	public Long id;*/
 
 	@Column(nullable=false, length=256)
-	public String ORIENTADO;
+	public String ORIENTADOR;
 	
 	@Column(nullable=false, length=256)
 	public String DESCR;
@@ -34,12 +34,12 @@ public class Orientador extends AbstractPersistable<Long> {
 		this.id = id;
 	}
 */
-	public String getORIENTADO() {
-		return ORIENTADO;
+	public String getORIENTADOR() {
+		return ORIENTADOR;
 	}
 
 	public void setORIENTADOR(String oRIENTADO) {
-		ORIENTADO = oRIENTADO;
+		ORIENTADOR = oRIENTADO;
 	}
 
 	public String getDESCR() {

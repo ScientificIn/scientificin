@@ -21,7 +21,7 @@ public class Estagio extends AbstractPersistable<Long>  {
 	public String DESCR;
 	
 	@Column(nullable=false, length=256)
-	public String area;
+	public String AREA;
 	
 /*	public Long getId() {
 		return id2;
@@ -31,12 +31,12 @@ public class Estagio extends AbstractPersistable<Long>  {
 		this.id2 = id;
 	}*/
 	
-	public String getArea() {
-		return area;
+	public String getAREA() {
+		return AREA;
 	}
 
 	public void setArea(String area) {
-		this.area = area;
+		this.AREA = area;
 	}
 
 	public String getEMPRESA() {
