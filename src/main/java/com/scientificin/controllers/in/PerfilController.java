@@ -34,10 +34,6 @@ public class PerfilController {
 	//	mock!
 	@RequestMapping(value="/perfil", method=RequestMethod.GET)
 	public String perfil(Model model, ServletRequest req) {
-		HttpSession session = ((HttpServletRequest) req).getSession();
-		Sci sci = (Sci) session.getAttribute("sci");
-		
-		model.addAttribute("aluno", sciRepo.findOne(sci.getUsername()));
 		return "perfil";
 	}
 	

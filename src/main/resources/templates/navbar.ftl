@@ -42,20 +42,18 @@
 <!--         <li><a href="#">Link</a></li>
  -->        <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-          
-<#if aluno??>
-          ${aluno.nome}
-</#if>
-          
-          
+			<#if sci??>
+		          ${sci.nome}
+			</#if>
           </a>
           <ul class="dropdown-menu">
-            <li><a href="#">Editar perfil</a></li>
-            <li><a href="#">Opções</a></li>
+            <li><a href="/in/perfil">Perfil</a></li>
+            <li><a href="/in/home">Home</a></li>
+            <li><a href="/in/match">Matcher</a></li>
             <li role="separator" class="divider"></li>
             <li>
             	<form action="/logout" method="post">
-		            <input type="submit" value="Sair"/>
+		            <input id="logout" class="btn btn-default" type="submit" value="Sair"/>
 		        </form>
             </li>
           </ul>

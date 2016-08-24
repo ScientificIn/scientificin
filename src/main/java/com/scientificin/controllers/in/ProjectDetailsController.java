@@ -14,7 +14,7 @@ import com.scientificin.repositories.RecursosRepository;
 import com.scientificin.repositories.TrabalhoRepository;
 
 @Controller
-@RequestMapping("/in/details")
+@RequestMapping("/in/trabalho/detalhes")
 public class ProjectDetailsController {
 	
 	@Autowired TrabalhoRepository trabRepo;

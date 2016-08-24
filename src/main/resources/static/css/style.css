@@ -90,6 +90,14 @@ img.center {
 	color: red;
 }
 
+.nav .dropdown-menu {
+	text-align: center;
+}
+
+#logout {
+	width: 100%;
+}
+
 
 /* Customize container */
 /* @media (min-width: 768px) {

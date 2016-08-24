@@ -25,8 +25,8 @@ public class Trabalho extends AbstractPersistable<Long> {
 	@Column(length = 256)
 	private String titulo;
 	private String texto;
+	
 	private Integer posicao;
-
 	private Integer posicaoNaArea;
 	private Integer posicaoNaSubArea;
 

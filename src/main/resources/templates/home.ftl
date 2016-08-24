@@ -5,11 +5,11 @@
 			<h2>Olá, <span style="font-weight: bold;">${Session.sci.nome}</span>, navegue em uma das opções:</h2>
 			
 			<div class="col-lg-6">
-			  <p><a class="btn btn-primary btn-lg" href="#" role="button">Editar perfil</a></p>
+			  <p><a class="btn btn-primary btn-lg" href="/in/perfil" role="button">Visualizar perfil</a></p>
 			</div>
 
 			<div class="col-lg-6">
-			  <p><a class="btn btn-primary btn-lg" href="#" role="button">Usar matcher</a></p>
+			  <p><a class="btn btn-primary btn-lg" href="/in/match" role="button">Usar matcher</a></p>
 			</div>
 
 </div>
@@ -19,7 +19,7 @@
 			<div class="panel panel-default col-md-6">
 			  <div class="panel-heading">Últimas conferências</div>
 			  <div class="panel-body">
-			  	<#list sci.conferencias as conferencia>
+			  	<#list Session.sci.conferencias as conferencia>
 			  		<div class="panel panel-success">
 			  			<div class="panel-heading">${conferencia.nome}, ${conferencia.data}</div>
 			  			<div class="panel-body">Você foi ${conferencia.cargo} nesta conferência. <a href="${conferencia.url}">Clique aqui</a> para ir ao site do evento.</div>

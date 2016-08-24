@@ -23,7 +23,6 @@
   </div> 
    
     <br> 
-    <input type="hidden"  name="${_csrf.parameterName}"   value="${_csrf.token}"/> 
     <input type="submit" value="Enviar"> 
     <button type="button" name="back" onclick="history.back()">Voltar</button>
 </form> 

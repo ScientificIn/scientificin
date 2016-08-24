@@ -7,11 +7,11 @@
 		</div>
 		<div class="col-lg-8">
 
-		<h2>${aluno.nome}</h2>
-			<p>${aluno.instituicao.nome} (${aluno.instituicao.sigla})</p>
+		<h2>${Session.sci.nome}</h2>
+			<p>${Session.sci.instituicao.nome} (${Session.sci.instituicao.sigla})</p>
 
       <#-- <p>Centro de Matem�tica, Computa��o e Cogni��o</p> -->
-			<p>${aluno.areaDeAtuacao.nome}</p>
+			<p>${Session.sci.areaDeAtuacao.nome}</p>
 			
 			  <p><a class="btn btn-primary btn-lg" href="#" role="button">Seguir</a></p>
 		</div>
@@ -20,10 +20,10 @@
 
 <div class="container">
 	<div class="col-lg-6">
-	Sobre Roberto Carlos:
+	Sobre ${Session.sci.nome}:
 
-      ${aluno.biografia}
-      <#-- ${aluno.biografia} -->
+      ${Session.sci.biografia}
+      <#-- ${Session.sci.biografia} -->
 
 	</div>
 	<div class="col-lg-6">
@@ -34,7 +34,7 @@
 <div class="container matcherBox">
 	<div class="col-lg-6">
 	<b>Matcher</b>
-	Roberto Carlos procura:
+	${Session.sci.nome} procura:
 	<ul>
 	<li>
 	O cara que pensa em você toda hora
@@ -59,88 +59,44 @@
 
 	<div class="col-lg-12">
 
-<div class="page-header">
-  <h3>Artigos</h3>
-</div>
-
-<#list aluno.trabalhos as trabalho>
-  <p>Trabalho: ${trabalho.titulo}
-</#list>
-
-
-<div class="page-header">
-  <h3>Livros</h3>
-</div>
-<div class="testeClass">
-		<p>Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
-			Cras mattis consectetur purus sit amet fermentum.</p>
-
-		<p>Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
-		<p>Donec id elit non mi porta gravida at eget metus. Maecenas
-			faucibus mollis interdum.</p>
-
-		<p>Donec id elit non mi porta gravida at eget metus. Maecenas
-			faucibus mollis interdum.</p>
-
-		<p>Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
-			Cras mattis consectetur purus sit amet fermentum.</p>
-
-		<p>Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
-		<p>Donec id elit non mi porta gravida at eget metus. Maecenas
-			faucibus mollis interdum.</p>
-
-		<p>Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
-			Cras mattis consectetur purus sit amet fermentum.</p>
-</div>
-
-<div class="page-header">
-  <h3>Congressos�ncias</h3>
-</div>
-		<p>Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
-
-		<p>Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
-
-		<p>Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
-			Cras mattis consectetur purus sit amet fermentum.</p>
-
-		<p>Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
-		<p>Donec id elit non mi porta gravida at eget metus. Maecenas
-			faucibus mollis interdum.</p>
-
-		<p>Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
-			Cras mattis consectetur purus sit amet fermentum.</p>
-
-		<p>Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
-		<p>Donec id elit non mi porta gravida at eget metus. Maecenas
-			faucibus mollis interdum.</p>
-
-		<p>Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
-			Cras mattis consectetur purus sit amet fermentum.</p>
-
-		<p>Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
-		<p>Donec id elit non mi porta gravida at eget metus. Maecenas
-			faucibus mollis interdum.</p>
-
-		<p>Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
-			Cras mattis consectetur purus sit amet fermentum.</p>
-
-		<p>Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
-		<p>Donec id elit non mi porta gravida at eget metus. Maecenas
-			faucibus mollis interdum.</p>
-
-		<p>Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
-			Cras mattis consectetur purus sit amet fermentum.</p>
-
-		<p>Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
-		<p>Donec id elit non mi porta gravida at eget metus. Maecenas
-			faucibus mollis interdum.</p>
-
-		<p>Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
-			Cras mattis consectetur purus sit amet fermentum.</p>
-
-		<p>Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
-	</div>
-
+		<div class="page-header">
+		  <h3>Trabalhos</h3>
+		</div>
+		<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+			<#list sci.trabalhos as trabalho>
+				<div class="panel panel-default">
+					<div class="panel-heading" role="tab" id="head-${trabalho.id}">
+						<h4 class="panel-title">
+						<a role="button" data-toggle="collapse" data-parent="#accordion" href="#trabalho-${trabalho.id}" aria-expanded="true" aria-controls="collapseTrabalho${trabalho.id}">
+							${trabalho.titulo}
+						</a>
+						</h4>
+					</div>
+					<div id="trabalho-${trabalho.id}" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+						<div class="panel-body">
+							${trabalho.notasDoAutor}<br><br>
+							Posição no Ranking Geral: ${trabalho.posicao}<br>
+							Posição no Ranking da Área: ${trabalho.posicaoNaArea}<br>
+							Posição no Ranking da Sub-Área: ${trabalho.posicaoNaSubArea}<br><br>
+							<a href="/in/trabalho/detalhes/${trabalho.id}">Detalhes</a>
+						</div>
+					</div>
+				</div>
+			</#list>
+		</div>
+	  
+		<div class="page-header">
+		  <h3>Conferências</h3>
+		</div>
+		
+		<#list sci.conferencias as conferencia>
+			<div class="panel panel-default">
+			  <div class="panel-body">
+			    <a href="${conferencia.url}">${conferencia.nome}</a>
+			  </div>
+			  <div class="panel-footer">${conferencia.data}, foi ${conferencia.cargo}</div>
+			</div>
+		</#list>
 </div>
 
 
@@ -161,7 +117,7 @@
 				<li><a class="main-button">Perfil</a></li>
 				<li><a class="main-button">Matches</a></li>
 				<li><a class="main-button">Meus trabalhos</a></li>
-				<li><a class="main-button">Busca de usu�rios</a></li>
+				<li><a class="main-button">Busca de usuários</a></li>
 			</ul>
 		</div>
 		
