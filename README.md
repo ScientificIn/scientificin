@@ -8,6 +8,9 @@ Para rodar o projeto, serão necessárias as seguintes tecnologias:
 * Spring Boot;
 * Maven;
 
+
+-----------------
+
 - Importe o projeto como um projeto Maven.
 - Dê um maven update (alt + f5) no projeto.
 - Clique com o botão direito no projeto -> run as... -> maven build...
