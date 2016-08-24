@@ -15,7 +15,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.scientificin.beans.forms.FormCadastro;
-import com.scientificin.entities.Estagio;
 import com.scientificin.entities.Sci;
 import com.scientificin.entities.options.GrandeAreaDoConhecimento;
 import com.scientificin.entities.options.Instituicao;
@@ -102,11 +101,6 @@ public class ExternalPagesController {
 		}
 	}
 
-	@RequestMapping(value="/home", method=RequestMethod.GET)
-	public String home() {
-		return "home";
-	}
-	
 	@RequestMapping("/busca")
 	public String busca (Model model, @ModelAttribute("busca") FormCadastro form) {
 		return "Busca2";

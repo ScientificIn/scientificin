@@ -4,7 +4,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import com.scientificin.entities.Sci;
 
-public interface SciRepository extends JpaRepository<Sci, Long>{
+public interface SciRepository extends JpaRepository<Sci, String>{
 
 	Sci findByUsername(String username);
 
