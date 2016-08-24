@@ -1,6 +1,7 @@
 package com.scientificin.controllers;
 
 import java.security.SecureRandom;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.http.HttpServletResponse;
@@ -22,6 +23,11 @@ import com.scientificin.repositories.AreasDoConhecimentoRepository;
 import com.scientificin.repositories.GrandesAreasDoConhecimentoRepository;
 import com.scientificin.repositories.InstiuicoesRepository;
 import com.scientificin.repositories.SciRepository;
+import com.scientificin.repositories.AlunoRepository;
+import com.scientificin.repositories.EstagiarioRepository;
+import com.scientificin.repositories.EstagioRepository;
+import com.scientificin.repositories.OrientadorRepository;
+import com.scientificin.repositories.SociedadeRepository;
 
 @Controller
 public class ExternalPagesController {
@@ -30,6 +36,11 @@ public class ExternalPagesController {
 	@Autowired GrandesAreasDoConhecimentoRepository grandesAreasRepo;
 	@Autowired AreasDoConhecimentoRepository areasRepo;
 	@Autowired InstiuicoesRepository instRepo;
+	@Autowired EstagioRepository EstRep;
+	@Autowired EstagiarioRepository EstagiarioRep;
+	@Autowired SociedadeRepository SocioRep;	
+	@Autowired OrientadorRepository OrientadorRep;
+	@Autowired AlunoRepository AlunoRep;
 	
 	@ModelAttribute(value="grandesAreas")
 	public List<GrandeAreaDoConhecimento>  getGrandesAreas () {
@@ -112,6 +123,79 @@ public class ExternalPagesController {
 	@RequestMapping("/busca")
 	public String busca (Model model, @ModelAttribute("busca") FormCadastro form) {
 		return "Busca2";
+	}
+	
+
+	@RequestMapping(value="/match", method=RequestMethod.GET)
+	public String match (Model model) {
+		return "findmatch";
+	}
+	
+	@RequestMapping(value = "/match", method=RequestMethod.POST)
+	public String findResultado(HttpServletRequest request, Model model) {
+		/*@RequestParam("id") String id*/		
+		String[] arr = new String[5];
+		arr[0] = request.getParameter("Estagio");
+		arr[1] = request.getParameter("Estagiario");
+		arr[2] = request.getParameter("Socio");
+		arr[3] = request.getParameter("Orientador");
+		arr[4] = request.getParameter("Aluno");		
+		
+		
+		//mn é o input do checkbox...(obs:sei lá pq usei esse nome)
+		for(int a = 0 ; a < 5 ; a++){
+			if(arr[a] != null)				
+				arr[a] = request.getParameter("mn"+a);
+		}
+		
+		if(arr[0] != null)
+		model.addAttribute("listEstagio",EstRep.findEstByArea(arr[0]));
+		
+		if(arr[1] != null)
+		model.addAttribute("listEstagiario",EstagiarioRep.findEstagiarioByArea(arr[1]));
+		
+		if(arr[2] != null)
+		model.addAttribute("listSocio",SocioRep.findSocioByArea(arr[2]));
+		
+		if(arr[3] != null)
+		model.addAttribute("listOrientador",OrientadorRep.findOrByArea(arr[3]));
+		
+		if(arr[4] != null)
+		model.addAttribute("listAluno",AlunoRep.findAlunoByArea(arr[4]));
+		
+		model.addAttribute("arr",arr);
+		
+/*		List<Estagio> listEstagio = EstRep.findEstByArea(arr[0]);
+		List<Estagio> listEstagiario = EstRep.findEstByArea(arr[1]);
+		List<Estagio> listSocio = EstRep.findEstByArea(arr[2]);		
+		List<Orientador> listOrientador = OrientadorRep.findOrByArea(arr[3]);
+		List<Estagio> listAluno = EstRep.findEstByArea(arr[4]);*/
+		
+//		
+//		Estagio testeEst = new Estagio();
+//		testeEst.id = (long) 1;
+//		testeEst.EMPRESA = "itau";
+//		testeEst.DESC = "INFERNO PROFISSIONAL";
+//		testeEst.area = "Telemetria";
+//		
+//		Orientador testeOri = new Orientador();
+//		testeOri.id = (long) 1;
+//		testeOri.ORIENTADOR = "Vera";
+//		testeOri.DESC = "Orientação em Tecnologias para desenvolvimento WEB";
+//		testeOri.AREA = "Ciência da Computação";
+		
+		//Teste de lista de estagiarios	
+//		List<Estagio> listEstagio = new ArrayList<Estagio>();
+//		listEstagio.add(testeEst);
+		
+		//Teste de lista de Orientadores
+//		List<Orientador> listOrientador = new ArrayList<Orientador>();
+//		listOrientador.add(testeOri);
+		
+/*		model.addAttribute("listEstagio",listEstagio);
+		model.addAttribute("listOrientador",listOrientador);*/
+		model.addAttribute("arr",arr);
+		return "findResult";
 	}
 	
 }
