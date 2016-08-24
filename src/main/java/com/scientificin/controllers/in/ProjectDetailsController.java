@@ -14,7 +14,7 @@ import com.scientificin.repositories.RecursosRepository;
 import com.scientificin.repositories.TrabalhoRepository;
 
 @Controller
-@RequestMapping("/in/trabalho/detalhes")
+@RequestMapping("/in")
 public class ProjectDetailsController {
 	
 	@Autowired TrabalhoRepository trabRepo;
@@ -22,7 +22,7 @@ public class ProjectDetailsController {
 	@Autowired BibliografiasRepository biblioRepo;
 	@Autowired RecursosRepository recRepo;
 
-	@RequestMapping(value="/{projectId}", method=RequestMethod.GET)
+	@RequestMapping(value="/trabalho/{projectId}", method=RequestMethod.GET)
 	public String mostraDetalhesTrabalho (@PathVariable("projectId") Long projectId, Model model) {
 		Trabalho trabalho = trabRepo.findOne(projectId);
 		trabalho.setAvaliacoes(avalRepo.findByTrabalho(trabalho));
@@ -31,6 +31,7 @@ public class ProjectDetailsController {
 		
 		model.addAttribute("trabalho", trabalho);
 		
-		return "detalhesTrabalho";
+		return "in/detalhesTrabalho";
 	}
+	
 }

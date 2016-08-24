@@ -54,7 +54,7 @@
 						<#list aval.nota..5 as n>
 							<div class="glyphicon glyphicon-star-empty"></div>
 						</#list>
-						<div class="texto-comentario>
+						<div class="texto-comentario">
 							${aval.comentario}
 						</div>
 					</div>

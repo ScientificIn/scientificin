@@ -78,7 +78,7 @@
 							Posição no Ranking Geral: ${trabalho.posicao}<br>
 							Posição no Ranking da Área: ${trabalho.posicaoNaArea}<br>
 							Posição no Ranking da Sub-Área: ${trabalho.posicaoNaSubArea}<br><br>
-							<a href="/in/trabalho/detalhes/${trabalho.id}">Detalhes</a>
+							<a href="/in/trabalho/${trabalho.id}">Detalhes</a>
 						</div>
 					</div>
 				</div>
