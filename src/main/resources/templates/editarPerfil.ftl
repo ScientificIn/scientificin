@@ -4,49 +4,74 @@
 	<div class="container">
 		<div class="col-lg-4">
 			<a href="#"><img class="center" src="/img/emoji.png" width="50%"/></a>
-			  <p><a class="btn btn-primary btn-lg" href="#" role="button">Alterar Foto</a></p>
+			  <p><a class="btn btn-primary btn-lg" href="#" style="width: 100%" role="button">Alterar Foto</a></p>
 		</div>
 		<div class="col-lg-8">
 		<#assign showEditName = true>
-
-<h2>${aluno.nome}</h2>
-<div id="alterarNomeDiv" style="display:none;">
-				<form name="cadastro" role="form" method="post" action="/editarPerfilAction">
-					<div class="form-group" >
-						<label for="nome">Qual seu nome?</label>
-						<#-- TODO: fazer validacoes -->
-						<#-- <input onkeyup="validateRegisterForm();" class="form-control" type="text" name="nome" /> -->
-						<input class="form-control" type="text" name="nome" />
-						<button type="button" class="btn btn-default">Confirmar alteração</button>
-						<span class="help-inline error" style="display:none;">Seu nome deve ter no máximo 100 letras. Você pode abreviar os nomes do meio.</span>
-					</div>
-				</form>
-</div>
-<button id="alterarNomeBtn">Alterar</button>
 		
-<p>${aluno.instituicao.nome} (${aluno.instituicao.sigla})</p>
-<div id="alterarIESDiv" style="display:none;">
-				<form name="alterar" role="form" method="post" action="/alterar">
-					<div class="form-group" >
-						<label for="instituicao">Sua instituição de ensino:</label>
-						<select class="form-control" name="instituicao">
-							<#list instituicoes?sort_by("nome") as inst>
-							<option value="${inst.id}">${inst.nome}</option>
-							</#list>
-						</select> 
-					</div>
-				</form>
-</div>
-<button id="alterarIESBtn">Alterar</button>
-
-
-
-      <#-- <p>Centro de Matem�tica, Computa��o e Cogni��o</p> -->
-			<p>${aluno.areaDeAtuacao.nome}</p>
+		<form name="updateSci" action="/in/editarPerfilAction" method="post">
+			<div class="form-group">
+			    <label for="username">Login:</label>
+			    <input type="text" class="form-control" id="username" name="username" placeholder="Nome de usuário"/>
+			    
+			    <label for="password">Senha:</label>
+			    <input type="password" class="form-control" id="password" name="password" placeholder="Senha"/>
+			    
+			    <label for="biografia">Biografia:</label>
+			    <textarea class="form-control" name="biografia" id="biografia"></textarea>
+			    
+			    <label for="nome">Nome:</label>
+			    <input type="text" class="form-control" id="nome" name="nome" placeholder="Seu nome"/>
+			    
+			    <label for="instituicao">Escolha sua instituição:</label>
+			    <select class="form-control name="instituicao" id="instituicao">
+			    	<#list instituicoes as instituicao>
+			    		<option value="${instituicao}">${instituicao.nome}</option>
+			    	</#list>
+			    </select>
+			    
+			    <label for="areaDeAtuacao">Escolha sua área de atuação:</label>
+			    <select class="form-control name="areaDeAtuacao" id="areaDeAtuacao">
+			    	<#list grandesAreas as grandeArea>
+			    		<option value="${grandeArea}">${grandeArea.nome}</option>
+			    	</#list>
+			    </select>
+			</div>
 			
+			<input type="submit" class="btn btn-primary" value="Confirmar"/>
+		</form>
+		
+		<form name="formTrabalho" action="/in/editarPerfil/trabalho" method="post">
+			
+		</form>
+		
+		<form name="formConferencia" action="/in/editarPerfil/conferencia" method="post">
+			
+		</form>
+		
 		</div>
 	</div>
 </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 <div class="container">
 	<div class="col-lg-6">

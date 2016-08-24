@@ -1,5 +1,7 @@
 package com.scientificin.controllers.in;
 
+import java.util.List;
+
 import javax.servlet.ServletRequest;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -7,11 +9,15 @@ import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
 
 import com.scientificin.entities.Sci;
+import com.scientificin.entities.options.GrandeAreaDoConhecimento;
+import com.scientificin.entities.options.Instituicao;
+import com.scientificin.repositories.GrandesAreasDoConhecimentoRepository;
+import com.scientificin.repositories.InstiuicoesRepository;
 import com.scientificin.repositories.SciRepository;
 
 @Controller
@@ -20,6 +26,17 @@ public class PerfilController {
 	
 	@Autowired
 	private SciRepository sciRepo;
+	@Autowired GrandesAreasDoConhecimentoRepository grandesAreasRepo;
+	@Autowired InstiuicoesRepository instRepo;
+	
+	@ModelAttribute(value="grandesAreas")
+	public List<GrandeAreaDoConhecimento>  getGrandesAreas () {
+		return grandesAreasRepo.findAll();
+	}
+	@ModelAttribute(value="instituicoes")
+	public List<Instituicao>  getSubAreas () {
+		return instRepo.findAll();
+	}
 
 //	mock!
 	@RequestMapping(value="/editarPerfil", method=RequestMethod.GET)
@@ -40,10 +57,9 @@ public class PerfilController {
 	
 	//	mock!
 	@RequestMapping(value="/editarPerfilAction", method=RequestMethod.POST)
-	public String editarPerfilAlterarNome(Sci sci, @RequestParam("nome") String novoNome, Model model) {
+	public String editarPerfilAlterarNome(Sci sci, Model model) {
 		Sci aluno = (Sci) model.asMap().get("aluno");
-		aluno.setNome(novoNome);
-		sciRepo.save(aluno);
+//		sciRepo.save(aluno);
 		return "editarPerfil";
 	}
 

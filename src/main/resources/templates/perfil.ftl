@@ -13,7 +13,7 @@
       <#-- <p>Centro de Matem�tica, Computa��o e Cogni��o</p> -->
 			<p>${Session.sci.areaDeAtuacao.nome}</p>
 			
-			  <p><a class="btn btn-primary btn-lg" href="#" role="button">Seguir</a></p>
+			  <p><a class="btn btn-primary btn-lg" href="/in/editarPerfil" role="button">Editar Perfil</a></p>
 		</div>
 	</div>
 </div>
