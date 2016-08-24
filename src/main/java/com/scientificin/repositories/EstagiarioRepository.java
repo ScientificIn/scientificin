@@ -13,7 +13,7 @@ public interface EstagiarioRepository  extends JpaRepository<Estagiario, Long>{
 	@Query(nativeQuery=true, value="Select * From Estagiario Where id = :parametro")
 	public Estagiario findEstagiarioById(@Param("parametro") Long id);
 	
-	@Query(nativeQuery=true, value="Select * From Estagiario Where AREA like '%:parametro%'")
-	public List<Estagiario> findEstagiarioByArea(@Param("parametro") String area);
+	@Query(nativeQuery=true, value="Select * From Estagiario Where AREA Like %:area%")
+	public List<Estagiario> findEstagiarioByArea(@Param("area") String area);
 
 }

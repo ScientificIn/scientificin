@@ -13,7 +13,7 @@ public interface SociedadeRepository extends JpaRepository<Sociedade, Long>{
 	@Query(nativeQuery=true, value="Select * From Sociedade Where id = :parametro")
 	public Sociedade findSocioById(@Param("parametro") Long id);
 	
-	@Query(nativeQuery=true, value="Select * From Sociedade Where AREA like '%:parametro%'")
-	public List<Sociedade> findSocioByArea(@Param("parametro") String area);
+	@Query(nativeQuery=true, value="Select * From Sociedade Where AREA Like %:area%")
+	public List<Sociedade> findSocioByArea(@Param("area") String area);
 
 }

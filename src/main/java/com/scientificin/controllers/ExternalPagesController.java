@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.scientificin.beans.forms.FormCadastro;
+import com.scientificin.entities.Estagio;
 import com.scientificin.entities.Sci;
 import com.scientificin.entities.options.GrandeAreaDoConhecimento;
 import com.scientificin.entities.options.Instituicao;
@@ -130,56 +131,27 @@ public class ExternalPagesController {
 		
 		//mn � o input do checkbox...(obs:sei l� pq usei esse nome)
 		for(int a = 0 ; a < 5 ; a++){
-			if(arr[a] != null)				
+			if(arr[a] != null){				
 				arr[a] = request.getParameter("mn"+a);
+			}				
 		}
 		
 		if(arr[0] != null)
-		model.addAttribute("listEstagio",EstRep.findEstByArea(arr[0]));
+			model.addAttribute("listEstagio",EstRep.findEstByArea(arr[0]));
 		
 		if(arr[1] != null)
-		model.addAttribute("listEstagiario",EstagiarioRep.findEstagiarioByArea(arr[1]));
+			model.addAttribute("listEstagiario",EstagiarioRep.findEstagiarioByArea(arr[1]));
 		
 		if(arr[2] != null)
-		model.addAttribute("listSocio",SocioRep.findSocioByArea(arr[2]));
+			model.addAttribute("listSocio",SocioRep.findSocioByArea(arr[2]));
 		
 		if(arr[3] != null)
-		model.addAttribute("listOrientador",OrientadorRep.findOrByArea(arr[3]));
+			model.addAttribute("listOrientador",OrientadorRep.findOrByArea(arr[3]));
 		
 		if(arr[4] != null)
-		model.addAttribute("listAluno",AlunoRep.findAlunoByArea(arr[4]));
+			model.addAttribute("listAluno",AlunoRep.findAlunoByArea(arr[4]));
 		
-		model.addAttribute("arr",arr);
-		
-/*		List<Estagio> listEstagio = EstRep.findEstByArea(arr[0]);
-		List<Estagio> listEstagiario = EstRep.findEstByArea(arr[1]);
-		List<Estagio> listSocio = EstRep.findEstByArea(arr[2]);		
-		List<Orientador> listOrientador = OrientadorRep.findOrByArea(arr[3]);
-		List<Estagio> listAluno = EstRep.findEstByArea(arr[4]);*/
-		
-//		
-//		Estagio testeEst = new Estagio();
-//		testeEst.id = (long) 1;
-//		testeEst.EMPRESA = "itau";
-//		testeEst.DESC = "INFERNO PROFISSIONAL";
-//		testeEst.area = "Telemetria";
-//		
-//		Orientador testeOri = new Orientador();
-//		testeOri.id = (long) 1;
-//		testeOri.ORIENTADOR = "Vera";
-//		testeOri.DESC = "Orienta��o em Tecnologias para desenvolvimento WEB";
-//		testeOri.AREA = "Ci�ncia da Computa��o";
-		
-		//Teste de lista de estagiarios	
-//		List<Estagio> listEstagio = new ArrayList<Estagio>();
-//		listEstagio.add(testeEst);
-		
-		//Teste de lista de Orientadores
-//		List<Orientador> listOrientador = new ArrayList<Orientador>();
-//		listOrientador.add(testeOri);
-		
-/*		model.addAttribute("listEstagio",listEstagio);
-		model.addAttribute("listOrientador",listOrientador);*/
+
 		model.addAttribute("arr",arr);
 		return "findResult";
 	}
