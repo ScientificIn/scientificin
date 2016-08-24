@@ -1,4 +1,4 @@
--- Inserts lista de instituicoes.
+-- Inserts lista de instituicoes.este2
 INSERT INTO instituicoes (nome, sigla) VALUES ('Universidade de Brasília','UnB');
 INSERT INTO instituicoes (nome, sigla) VALUES ('Pontifícia Universidade Católica de Goiás','PUC-GO');
 INSERT INTO instituicoes (nome, sigla) VALUES ('Universidade Católica Dom Bosco','UCDB');
@@ -716,13 +716,13 @@ INSERT INTO sub_areas_do_conhecimento (area_do_conhecimento_id, nome) VALUES (77
 INSERT INTO sub_areas_do_conhecimento (area_do_conhecimento_id, nome) VALUES (77,'Educação Artística');
 
 -- Inserts de usuários iniciais pra testarmos.
-INSERT INTO sci (account_expired, biografia, credentials_expired, enabled, locked, nome, password, username, area_de_atuacao_id, instituicao_id) VALUES (false, 'biografia teste 1', false, true, false, 'nome teste 1', 'teste1@teste1.com', 'teste1', 1, 1);
-INSERT INTO sci (account_expired, biografia, credentials_expired, enabled, locked, nome, password, username, area_de_atuacao_id, instituicao_id) VALUES (false, 'biografia teste 2', false, true, false, 'nome teste 2', 'teste2@teste2.com', 'teste2', 2, 2);
-INSERT INTO sci (account_expired, biografia, credentials_expired, enabled, locked, nome, password, username, area_de_atuacao_id, instituicao_id) VALUES (false, 'biografia teste 3', false, true, false, 'nome teste 3', 'teste3@teste3.com', 'teste3', 3, 3);
+INSERT INTO sci (account_expired, biografia, credentials_expired, enabled, locked, nome, password, username, area_de_atuacao_id, instituicao_id) VALUES (false, 'biografia teste 1', false, true, false, 'nome teste 1', 'teste1', 'teste1', 1, 1);
+INSERT INTO sci (account_expired, biografia, credentials_expired, enabled, locked, nome, password, username, area_de_atuacao_id, instituicao_id) VALUES (false, 'biografia teste 2', false, true, false, 'nome teste 2', 'teste2', 'lambda', 2, 2);
+INSERT INTO sci (account_expired, biografia, credentials_expired, enabled, locked, nome, password, username, area_de_atuacao_id, instituicao_id) VALUES (false, 'biografia teste 3', false, true, false, 'nome teste 3', 'teste3', 'teste3@teste3.com', 3, 3);
 
 -- Inserts de roles dos usuários.
-INSERT INTO user_roles (username, role) VALUES ('teste1@teste1.com', 'SCI');
-INSERT INTO user_roles (username, role) VALUES ('teste2@teste2.com', 'ADMIN');
+INSERT INTO user_roles (username, role) VALUES ('teste1', 'SCI');
+INSERT INTO user_roles (username, role) VALUES ('lambda', 'ADMIN');
 INSERT INTO user_roles (username, role) VALUES ('teste3@teste3.com', 'SCI');
 
 -- Inserts de tipos de trabalhos.
@@ -731,11 +731,11 @@ INSERT INTO tipos_de_trabalho (nome) VALUES ('Livro');
 INSERT INTO tipos_de_trabalho (nome) VALUES ('Projeto De Pesquisa');
 
 -- Inserts de trabalhos dos usuários.
-INSERT INTO trabalhos (notas_do_autor, autor_id, posicao, posicao_na_area, posicao_na_sub_area, texto, titulo, area_id, sub_area_id, tipo_de_trabalho_id) VALUES ('notas do autor de teste 1.', 1, 1, 1, 1, 'texto de teste 1.', 'titulo_de_teste 1', 1, 1, 1);
-INSERT INTO trabalhos (notas_do_autor, autor_id, posicao, posicao_na_area, posicao_na_sub_area, texto, titulo, area_id, sub_area_id, tipo_de_trabalho_id) VALUES ('notas do autor de teste 2.', 1, 2, 2, 2, 'texto de teste 2.', 'titulo_de_teste 2', 2, 2, 2);
-INSERT INTO trabalhos (notas_do_autor, autor_id, posicao, posicao_na_area, posicao_na_sub_area, texto, titulo, area_id, sub_area_id, tipo_de_trabalho_id) VALUES ('notas do autor de teste 3.', 2, 3, 3, 3, 'texto de teste 3.', 'titulo_de_teste 3', 3, 3, 3);
-INSERT INTO trabalhos (notas_do_autor, autor_id, posicao, posicao_na_area, posicao_na_sub_area, texto, titulo, area_id, sub_area_id, tipo_de_trabalho_id) VALUES ('notas do autor de teste 4.', 3, 4, 4, 4, 'texto de teste 4.', 'titulo_de_teste 4', 4, 4, 2);
-INSERT INTO trabalhos (notas_do_autor, autor_id, posicao, posicao_na_area, posicao_na_sub_area, texto, titulo, area_id, sub_area_id, tipo_de_trabalho_id) VALUES ('notas do autor de teste 5.', 3, 5, 5, 5, 'texto de teste 5.', 'titulo_de_teste 5', 5, 5, 1);
+INSERT INTO trabalhos (notas_do_autor, autor_username, posicao, posicao_na_area, posicao_na_sub_area, texto, titulo, area_id, sub_area_id, tipo_de_trabalho_id) VALUES ('notas do autor de teste 1.', 'teste1', 1, 1, 1, 'texto de teste 1.', 'titulo_de_teste 1', 1, 1, 1);
+INSERT INTO trabalhos (notas_do_autor, autor_username, posicao, posicao_na_area, posicao_na_sub_area, texto, titulo, area_id, sub_area_id, tipo_de_trabalho_id) VALUES ('notas do autor de teste 2.', 'teste1', 2, 2, 2, 'texto de teste 2.', 'titulo_de_teste 2', 2, 2, 2);
+INSERT INTO trabalhos (notas_do_autor, autor_username, posicao, posicao_na_area, posicao_na_sub_area, texto, titulo, area_id, sub_area_id, tipo_de_trabalho_id) VALUES ('notas do autor de teste 3.', 'lambda', 3, 3, 3, 'texto de teste 3.', 'titulo_de_teste 3', 3, 3, 3);
+INSERT INTO trabalhos (notas_do_autor, autor_username, posicao, posicao_na_area, posicao_na_sub_area, texto, titulo, area_id, sub_area_id, tipo_de_trabalho_id) VALUES ('notas do autor de teste 4.', 'teste3@teste3.com', 4, 4, 4, 'texto de teste 4.', 'titulo_de_teste 4', 4, 4, 2);
+INSERT INTO trabalhos (notas_do_autor, autor_username, posicao, posicao_na_area, posicao_na_sub_area, texto, titulo, area_id, sub_area_id, tipo_de_trabalho_id) VALUES ('notas do autor de teste 5.', 'teste3@teste3.com', 5, 5, 5, 'texto de teste 5.', 'titulo_de_teste 5', 5, 5, 1);
 
 -- Inserts de avaliações dos trabalhos.
 INSERT INTO avaliacoes (comentario, nota, trabalho_id) VALUES ('comentario de teste 1.', 1, 1);

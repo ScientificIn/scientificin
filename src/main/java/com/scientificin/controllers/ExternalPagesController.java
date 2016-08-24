@@ -12,7 +12,6 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
 
 import com.scientificin.beans.forms.FormCadastro;
 import com.scientificin.entities.Sci;
@@ -39,27 +38,15 @@ public class ExternalPagesController {
 	public List<Instituicao>  getSubAreas () {
 		return instRepo.findAll();
 	}
-
-	@RequestMapping(value = "/login", method = RequestMethod.GET)
-	public String login(@RequestParam(value = "error", required = false) String error,
-		@RequestParam(value = "logout", required = false) String logout,
-		Model model) {
-	  if (error != null) {
-		model.addAttribute("error", "Usuário ou senha inválidos.");
-		return "index";
-	  }
-
-	  if (logout != null) {
-		model.addAttribute("msg", "Você foi desconectado.");
-		return "index";
-	  }
-	  
-	  return "home";
-	}
 	
 	@RequestMapping("/")
 	public String index (Model model) {
 		return "index";
+	}
+	
+	@RequestMapping("/login")
+	public String login (Model model) {
+		return "login";
 	}
 	
 	@RequestMapping(value="/cadastro", method=RequestMethod.POST)
